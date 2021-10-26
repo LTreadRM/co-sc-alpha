@@ -1,0 +1,47 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column">
+      <h1 class="govuk-heading-xl">
+        Spend Control alpha prototype
+      </h1>
+	   </div>
+      <div class="govuk-grid-column-two-thirds">
+
+      <p>
+        This contains versions of the spend control prototype for alpha phase 
+      </p>
+
+      <p>
+      </p>
+
+      <h2 class="govuk-heading-m">Versions</h2>
+
+      <p>
+      	Note that versions are in reverse date order (most recent is at the top)
+      </p>
+
+      <p>
+      </p>
+
+      <h2 class="govuk-heading-m">Examples and documentation</h2>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
+        </li>
+        <li>
+          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+{% endblock %}
