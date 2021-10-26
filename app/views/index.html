@@ -22,8 +22,6 @@
       <p>
       </p>
 
-      <h2 class="govuk-heading-m">Versions</h2>
-
       <p>
       	Note that versions are in reverse date order (most recent is at the top)
       </p>
@@ -31,14 +29,34 @@
       <p>
       </p>
 
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+		{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{{ govukTable({
+  caption: "Versions",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Release"
+    },
+    {
+      text: "Link"
+    }
+  ],
+  rows: [
+    [
+      {
+        text: "0.1 - Department set up approvals"
+      },
+      {
+
+	          html: "<a href='http://co-sc-alpha.herokuapp.com/index'>link</a>"
+	    	
+      }
+    ]
+  ]
+}) }}
+
     </div>
   </div>
 
