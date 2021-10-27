@@ -29,33 +29,20 @@
       <p>
       </p>
 
-		{% from "govuk/components/table/macro.njk" import govukTable %}
-
-{{ govukTable({
-  caption: "Versions",
-  captionClasses: "govuk-table__caption--m",
-  firstCellIsHeader: true,
-  head: [
-    {
-      text: "Release"
-    },
-    {
-      text: "Link"
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "0.1 - Department set up approvals"
-      },
-      {
-
-	          html: "<a href='http://co-sc-alpha.herokuapp.com/index'>link</a>"
-	    	
-      }
-    ]
-  ]
-}) }}
+		<h3 class="govuk-heading-s">Version 0.1</h3>
+		
+		<ul class="govuk-list">
+		  <li>
+		    <a class="govuk-link" href="v0.1/index">Departments - begin case</a>
+		  </li>
+		  </li>
+		  <li>
+		    <a class="govuk-link" href="#"></a>
+		  </li>
+		  <li>
+		    <a class="govuk-link" href="#"></a>
+		  </li>
+		</ul>
 
     </div>
   </div>
