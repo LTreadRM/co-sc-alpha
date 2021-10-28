@@ -1,0 +1,73 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column">
+	   </div>
+      <div class="govuk-grid-column-one-third">
+    	<span class="govuk-caption-xl">Spend Controls</span>
+	      <h1 class="govuk-heading-xl">
+	        Sign in
+	      </h1>
+
+			<form action="signing-in" method="send">
+				<!-- User name text field -->
+				<div class="govuk-form-group">
+		  		  <label class="govuk-label" for="event-name">
+				      User name
+				  </label>
+				  <input class="govuk-input" id="event-name" name="event-name" type="text">
+				</div>
+		
+				<!-- password field -->
+				<div class="govuk-form-group">
+		  		  <label class="govuk-label" for="event-name">
+				      Password
+				  </label>
+				  <input class="govuk-input" id="event-name" name="event-name" type="password">
+				</div>
+	
+				<!-- Sign-in button -->
+				<div class="govuk-form-group">
+					<button class="govuk-button" data-module="govuk-button">
+					  Sign in
+					</button>
+				</div>
+			</form>
+
+			<!-- create account prompt -->
+			<div class="govuk-form-group">
+				<a href="#">Create sign in details</a>
+			</div>
+
+			<!-- help signing in -->
+	      <h1 class="govuk-heading-m">
+	      	Problems signing in?
+	      </h1>
+
+			<ul class="govuk-list">
+	  		    <li>
+				    <a href="#">I have forgotten my password</a>
+			    </li>
+			    <li>
+					<a href="#">I have forgotten my username</a>
+				 </li>
+			</ul>
+
+
+		</div>
+
+    </div>
+  </div>
+
+{% endblock %}
