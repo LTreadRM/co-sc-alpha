@@ -5,10 +5,11 @@ const router = express.Router()
 
 module.exports = router
 
-router.get('/v0.1/index', function(req, res) {
-	res.render('v0.1/index')
+router.get('/v0-1/index', function(req, res) {
+	res.render('v0-1/index')
 })
 
-router.get('/v0.1/signing-in', function(req, res) {
-	res.render('v0.1/your-cases')
+router.get('/v0-1/signing-in', function(req, res) {
+	res.redirect('/v0-1/your-cases')
 })
+
