@@ -1,0 +1,225 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="about-you" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-xl">
+			About the spend
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<p>
+			Lorem ipsum - is help text necessary here to help users establish context? 
+		</p>
+
+		<form action="sending-about-spend" method="send">
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="spend-title">
+					Title of spend
+				</label>
+				<input class="govuk-input" id="spend-title" name="spend-title" type="text">
+			</div>
+
+			<div class="govuk-form-group">
+				<label class="govuk-label" for="role">
+					Description of spend
+				</label>
+				<textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<h2 class="govuk-heading-m">
+						What area of spend are you applying in?
+					</h2>
+
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="advertising">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Advertising
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="commercial">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Commercial
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="digital-and-technology">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Digital and technology
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="consultancy">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Consultancy
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="property">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Property
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="facilities">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Facilities
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="redundancy">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Redundancy
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="recruitment">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Recruitment
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="learning-and-development">
+							<label class="govuk-label govuk-radios__label" for="spend-type">
+								Learning and development
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<h2 class="govuk-heading-m">
+						Does the anticipated spend require commercial assurance?
+					</h2>
+
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="yes">
+							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
+								Yes
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="no">
+							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
+								No
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="expected-end-date-hint">
+					<h2 class="govuk-heading-m">
+						When is the expected end date?
+					</h2>
+					<div id="expected-end-date-hint" class="govuk-hint">
+						For example, 27 3 2024
+					</div>
+					<div class="govuk-date-input" id="expected-end-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="expected-end-date-day">
+									Day
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expected-end-date-day" name="expected-end-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+							 </div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="expected-end-date-month">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expected-end-date-month" name="expected-end-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+							 </div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="expected-end-date-year">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expected-end-date-year" name="expected-end-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset">
+					<h2 class="govuk-heading-m">
+						Have you received all the necessary approvals from your organisation?
+					</h2>
+					<div id="received-necessary-approvals-hint" class="govuk-hint">
+						Necessary approval may include internal governance processes and reviews. 
+						You may not have all approvals initially. You can update this at 
+						a later date.
+					</div>
+
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="yes">
+							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
+								Yes
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="no">
+							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
+								No
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<button class="govuk-button" data-module="govuk-button">
+					Save and continue
+				</button>
+			</div>
+
+
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+
+			</div>
+		</div>
+    </form>
+
+  </div>
+
+{% endblock %}
