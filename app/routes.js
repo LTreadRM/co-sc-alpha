@@ -21,3 +21,11 @@ router.get('/v0-1/0-1-about-you', function(req, res) {
 	res.redirect('/v0-1/about-you')
 })
 
+router.get('/v0-1/sending-about_you', function(req, res) {
+	res.redirect('/v0-1/about-spend')
+})
+
+router.get('/v0-1/sending-about-spend', function(req, res) {
+	res.redirect('/v0-1/digital-tech-task-list')
+})
+
