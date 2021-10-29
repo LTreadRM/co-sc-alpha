@@ -29,3 +29,7 @@ router.get('/v0-1/sending-about-spend', function(req, res) {
 	res.redirect('/v0-1/digital-tech-task-list')
 })
 
+router.get('/v0-1/sending-key-contacts', function(req, res) {
+	res.redirect('/v0-1/digital-tech-key-contacts')
+})
+
