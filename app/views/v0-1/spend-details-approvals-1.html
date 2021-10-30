@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-task-list" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		<span class="govuk-caption-xl">
+			Step 1 of 5
+		</span>
+		<h1 class="govuk-heading-xl">
+			Spend details and approvals
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="sending-spend-details-approvals-1" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							What delivery stage(s) are you asking approval for?
+						</h1>
+					</legend>
+					<div id="waste-hint" class="govuk-hint">
+						Select at least one
+					</div>
+					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-1" name="delivery-stage" type="checkbox" value="Discovery">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage">
+								Discovery / feasibility
+							</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-2" name="delivery-stage" type="checkbox" value="alpha">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage-2">
+								Alpha
+							</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-3" name="delivery-stage" type="checkbox" value="private-beta">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage-3">
+								Private beta
+							</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-4" name="delivery-stage" type="checkbox" value="public-beta">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage-4">
+								Public beta
+							</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-5" name="delivery-stage" type="checkbox" value="live">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage-5">
+								Live
+							</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-6" name="delivery-stage" type="checkbox" value="sobc">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage-6">
+								Strategic outline business case
+							</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-7" name="delivery-stage" type="checkbox" value="obc">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage-7">
+								Outline business case
+							</label>
+						</div>
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="delivery-stage-8" name="delivery-stage" type="checkbox" value="pbc">
+							<label class="govuk-label govuk-checkboxes__label" for="delivery-stage-8">
+								Programme business case
+							</label>
+						</div>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

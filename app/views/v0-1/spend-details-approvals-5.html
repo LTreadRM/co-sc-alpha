@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="sending-spend-details-approvals-3" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 5 of 5
+		</span>
+		<h1 class="govuk-heading-xl">
+			Spend details and approvals
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="sending-spend-details-approvals-5" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Are there any critical dates for your project we should 
+							consider when processing this request?
+						</h1>
+					</legend>
+					<div id="waste-hint" class="govuk-hint">
+						Supporting text here
+					</div>
+				<div class="govuk-radios">
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="critical-dates-required-required" name="critical-dates-required-required" type="radio" value="yes">
+						<label class="govuk-label govuk-radios__label" for="critical-dates-required-required">
+							Yes
+						</label>
+					</div>
+
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="critical-dates-required-required" name="critical-dates-required-required" type="radio" value="no">
+						<label class="govuk-label govuk-radios__label" for="critical-dates-required-required">
+							No
+						</label>
+					</div>
+
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="critical-dates-required-required" name="critical-dates-required-required" type="radio" value="dunno">
+						<label class="govuk-label govuk-radios__label" for="critical-dates-required-required">
+							I don't know
+						</label>
+					</div>
+
+				</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
