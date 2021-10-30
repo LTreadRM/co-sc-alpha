@@ -29,7 +29,32 @@ router.get('/v0-1/sending-about-spend', function(req, res) {
 	res.redirect('/v0-1/digital-tech-task-list')
 })
 
-router.get('/v0-1/sending-key-contacts', function(req, res) {
+router.get('/v0-1/request-key-contacts', function(req, res) {
 	res.redirect('/v0-1/digital-tech-key-contacts')
 })
+
+router.get('/v0-1/request-spend-details-approvals', function(req, res) {
+	res.redirect('/v0-1/spend-details-approvals-1')
+})
+
+router.get('/v0-1/sending-spend-details-approvals-1', function(req, res) {
+	res.redirect('/v0-1/spend-details-approvals-2')
+})
+
+router.get('/v0-1/sending-spend-details-approvals-2', function(req, res) {
+	res.redirect('/v0-1/spend-details-approvals-3')
+})
+
+router.get('/v0-1/sending-spend-details-approvals-3', function(req, res) {
+	res.redirect('/v0-1/spend-details-approvals-4')
+})
+
+router.get('/v0-1/sending-spend-details-approvals-4', function(req, res) {
+	res.redirect('/v0-1/spend-details-approvals-5')
+})
+
+router.get('/v0-1/sending-spend-details-approvals-5', function(req, res) {
+	res.redirect('/v0-1/digital-tech-task-list')
+})
+
 
