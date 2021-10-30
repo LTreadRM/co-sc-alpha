@@ -38,29 +38,48 @@
 					<div id="waste-hint" class="govuk-hint">
 						Supporting text here
 					</div>
-				<div class="govuk-radios">
-					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="critical-dates-required-required" name="critical-dates-required-required" type="radio" value="yes">
-						<label class="govuk-label govuk-radios__label" for="critical-dates-required-required">
-							Yes
-						</label>
-					</div>
+					<div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
-					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="critical-dates-required-required" name="critical-dates-required-required" type="radio" value="no">
-						<label class="govuk-label govuk-radios__label" for="critical-dates-required-required">
-							No
-						</label>
-					</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="critical-dates-required" name="critical-dates-required" type="radio" 
+									value="yes" data-aria-controls="critical-date" {{ checked("critical-dates-required", "yes") }}>
+							<label class="govuk-label govuk-radios__label" for="critical-dates-required">
+								Yes
+							</label>
+						</div>
+						<!-- conditional, requesting date -->
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="critical-date">
+							<div class="govuk-form-group">
+								
+							<h1 class="govuk-heading-s">
+								What are the critical dates?
+							</h1>
+								
+							<span class="govuk-caption-m">
+								For example, 12 11 2022
+							</span>
+								
+							</div>
+						</div>
 
-					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="critical-dates-required-required" name="critical-dates-required-required" type="radio" value="dunno">
-						<label class="govuk-label govuk-radios__label" for="critical-dates-required-required">
-							I don't know
-						</label>
-					</div>
 
-				</div>
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="critical-dates-required" name="critical-dates-required" type="radio" 
+									value="no" {{ checked("critical-dates-required", "no") }}>
+							<label class="govuk-label govuk-radios__label" for="critical-dates-required">
+								No
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="critical-dates-required" name="critical-dates-required" type="radio" 
+									value="dunno" {{ checked("critical-dates-required", "dunno") }}>
+							<label class="govuk-label govuk-radios__label" for="critical-dates-required">
+								I don't know
+							</label>
+						</div>
+
+					</div>
 
 				</fieldset>
 			</div>

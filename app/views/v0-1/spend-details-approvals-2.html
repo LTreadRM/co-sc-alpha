@@ -39,21 +39,24 @@
 					</div>
 				<div class="govuk-radios">
 					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="ipa-review" name="ipa-review" type="radio" value="yes">
+						<input class="govuk-radios__input" id="ipa-review" name="ipa-review" type="radio" 
+								value="yes" {{ checked("ipa-review", "yes") }}>
 						<label class="govuk-label govuk-radios__label" for="ipa-review">
 							Yes
 						</label>
 					</div>
 
 					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="ipa-review" name="ipa-review" type="radio" value="no">
+						<input class="govuk-radios__input" id="ipa-review" name="ipa-review" type="radio" 
+								value="no" {{ checked("ipa-review", "no") }}>
 						<label class="govuk-label govuk-radios__label" for="ipa-review">
 							No
 						</label>
 					</div>
 
 					<div class="govuk-radios__item">
-						<input class="govuk-radios__input" id="ipa-review" name="ipa-review" type="radio" value="dunno">
+						<input class="govuk-radios__input" id="ipa-review" name="ipa-review" type="radio" 
+								value="dunno" {{ checked("ipa-review", "dunno") }}>
 						<label class="govuk-label govuk-radios__label" for="ipa-review">
 							I don't know
 						</label>
