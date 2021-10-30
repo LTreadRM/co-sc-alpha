@@ -33,14 +33,14 @@
 				<label class="govuk-label" for="spend-title">
 					Title of spend
 				</label>
-				<input class="govuk-input" id="spend-title" name="spend-title" type="text">
+				<input class="govuk-input" id="spend-title" name="spend-title" type="text" value="{{ data['spend-title'] }}">
 			</div>
 
 			<div class="govuk-form-group">
 				<label class="govuk-label" for="role">
 					Description of spend
 				</label>
-				<textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+				<textarea class="govuk-textarea" id="spend-description" name="spend-description" rows="5" aria-describedby="spend-description-hint">{{ data['spend-description'] }}</textarea>
 			</div>
 
 			<div class="govuk-form-group">
@@ -51,63 +51,63 @@
 
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="advertising">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="advertising" {{ checked("spend-type", "advertising") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Advertising
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="commercial">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="commercial" {{ checked("spend-type", "commercial") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Commercial
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="digital-and-technology">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="digital-and-technology" {{ checked("spend-type", "digital-and-technology") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Digital and technology
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="consultancy">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="consultancy" {{ checked("spend-type", "consultancy") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Consultancy
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="property">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="property" {{ checked("spend-type", "property") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Property
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="facilities">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="facilities" {{ checked("spend-type", "facilities") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Facilities
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="redundancy">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="redundancy" {{ checked("spend-type", "redundancy") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Redundancy
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="recruitment">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="recruitment" {{ checked("spend-type", "recruitment") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Recruitment
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="learning-and-development">
+							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="learning-and-development" {{ checked("spend-type", "learning-and-development") }}>
 							<label class="govuk-label govuk-radios__label" for="spend-type">
 								Learning and development
 							</label>
@@ -124,14 +124,14 @@
 
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="yes">
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="yes" {{ checked("commercial-assurance", "yes") }}>
 							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
 								Yes
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="no">
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="no" {{ checked("commercial-assurance", "no") }}>
 							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
 								No
 							</label>
@@ -154,7 +154,7 @@
 								<label class="govuk-label govuk-date-input__label" for="expected-end-date-day">
 									Day
 								</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expected-end-date-day" name="expected-end-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expected-end-date-day" name="expected-end-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['expected-end-date-day']}}">
 							 </div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -162,7 +162,7 @@
 								<label class="govuk-label govuk-date-input__label" for="expected-end-date-month">
 									Month
 								</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expected-end-date-month" name="expected-end-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expected-end-date-month" name="expected-end-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['expected-end-date-month']}}">
 							 </div>
 						</div>
 						<div class="govuk-date-input__item">
@@ -170,7 +170,7 @@
 								<label class="govuk-label govuk-date-input__label" for="expected-end-date-year">
 									Year
 								</label>
-								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expected-end-date-year" name="expected-end-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expected-end-date-year" name="expected-end-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['expected-end-date-year']}}">
 							</div>
 						</div>
 					</div>
@@ -190,14 +190,14 @@
 
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="yes">
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="yes" {{ checked("received-necessary-approvals", "yes") }}>
 							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
 								Yes
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="no">
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="no" {{ checked("received-necessary-approvals", "no") }}>
 							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
 								No
 							</label>
