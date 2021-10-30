@@ -33,6 +33,10 @@ router.get('/v0-1/request-key-contacts', function(req, res) {
 	res.redirect('/v0-1/digital-tech-key-contacts')
 })
 
+router.get('/v0-1/sending-key-contacts', function(req, res) {
+	res.redirect('/v0-1/digital-tech-task-list')
+})
+
 router.get('/v0-1/request-spend-details-approvals', function(req, res) {
 	res.redirect('/v0-1/spend-details-approvals-1')
 })
