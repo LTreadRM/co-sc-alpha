@@ -1,1 +1,66 @@
- 
+ {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-task-list" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-xl">
+			Key contacts
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<h2 class="govuk-heading-m">
+			Would you like anyone else copied into communications about this request?
+		</h2>
+
+		<p>
+			In some cases, you may want to keep a spend control business 
+			partner or internal assurance lead informed of case progress. 
+			Select 'Yes' to add their contact details. 
+		</p>
+
+		<form action="sending-key-contacts" method="send">
+			<fieldset class="govuk-fieldset">
+				<div class="govuk-radios">
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="add-key-contacts" name="add-key-contacts" type="radio" value="yes">
+						<label class="govuk-label govuk-radios__label" for="add-key-contacts">
+							Yes
+						</label>
+					</div>
+
+					<div class="govuk-radios__item">
+						<input class="govuk-radios__input" id="add-key-contacts" name="add-key-contacts" type="radio" value="no">
+						<label class="govuk-label govuk-radios__label" for="add-key-contacts">
+							No
+						</label>
+					</div>
+				</div>
+			</fieldset>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<button class="govuk-button" data-module="govuk-button">
+					Save and continue
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
