@@ -61,4 +61,8 @@ router.get('/v0-1/sending-spend-details-approvals-5', function(req, res) {
 	res.redirect('/v0-1/digital-tech-task-list')
 })
 
+router.get('/v0-1/request-digital-tech-about-project', function(req, res) {
+	res.redirect('/v0-1/digital-tech-about-project')
+})
+
 
