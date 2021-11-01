@@ -65,4 +65,8 @@ router.get('/v0-1/request-digital-tech-about-project', function(req, res) {
 	res.redirect('/v0-1/digital-tech-about-project-1')
 })
 
+router.get('/v0-1/sending-about-project-10', function(req, res) {
+	res.redirect('/v0-1/digital-tech-task-list')
+})
+
 

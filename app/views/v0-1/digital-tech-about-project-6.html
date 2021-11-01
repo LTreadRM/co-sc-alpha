@@ -48,23 +48,24 @@
 								Yes
 							</label>
 						</div>
-						<!-- conditional, requesting date -->
+						<!-- conditional, requesting details of external procurement -->
 						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="digital-tech-procuring-externally-strategy">
 							<div class="govuk-form-group">
 								<h1 class="govuk-heading-s">
-									What is your procurement strategy
+									Describe the requirement
 								</h1>
 								<span class="govuk-caption-m">
 									Help text goes here.
 								</span>
-								<input class="govuk-input" id="digital-tech-domain-name" name="digital-tech-domain-name" type="text">
-
+								<textarea class="govuk-textarea" id="digital-tech-procuring-externally-strategy-description" 
+										name="digital-tech-procuring-externally-strategy-description" 
+										rows="5"></textarea>
 							</div>
 						</div>
 
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="digital-tech-procuring-externally" name="digital-tech-procuring-externally" type="radio" 
-									value="no" {{ checked("digital-tech-procuring-externally", "no") }}>
+									value="no" {{ checked("digital-tech-procuring-externally-strategy", "no") }}>
 							<label class="govuk-label govuk-radios__label" for="digital-tech-procuring-externally">
 								No
 							</label>
@@ -79,6 +80,10 @@
 				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
 					<button class="govuk-button" data-module="govuk-button">
 						Save and continue
+					</button>
+					<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+							style="margin-left: 20px;">
+						Save and quit
 					</button>
 				</fieldset>
 			</div>
