@@ -1,0 +1,99 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-about-project-7" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 8 of 10
+		</span>
+		<h1 class="govuk-heading-xl">
+			About the project
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="digital-tech-about-project-9" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Is your service domain (URL) on GOV.UK?
+						</h1>
+					</legend>
+					<div id="hint" class="govuk-hint">
+						Supporting text here
+					</div>
+					
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="digital-tech-on-govuk" name="digital-tech-on-govuk" type="radio" 
+									value="yes" {{ checked("digital-tech-on-govuk", "yes") }}>
+							<label class="govuk-label govuk-radios__label" for="digital-tech-on-govuk">
+								Yes
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="digital-tech-on-govuk" name="digital-tech-on-govuk" type="radio" 
+									value="no" data-aria-controls="digital-tech-on-govuk-url" {{ checked("digital-tech-on-govuk", "no") }}>
+							<label class="govuk-label govuk-radios__label" for="digital-tech-on-govuk">
+								No
+							</label>
+						</div>
+						<!-- conditional, requesting date -->
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="digital-tech-on-govuk-url">
+							<div class="govuk-form-group">
+								<h1 class="govuk-heading-s">
+									If your service is not on GOV.UK, what is your service's domain name (URL)?
+								</h1>
+								<span class="govuk-caption-m">
+									Help text goes here.
+								</span>
+								<input class="govuk-input" id="digital-tech-domain-name" name="digital-tech-domain-name" type="text">							</div>
+							<div class="govuk-form-group">
+								<h1 class="govuk-heading-s">
+									You must also provide an attachment of proof of exemption case
+								</h1>
+								<span class="govuk-caption-m">
+									Help text goes here.
+								</span>
+								<input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" style="padding-top: 30px;">
+
+							</div>
+						</div>
+
+						
+						
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
