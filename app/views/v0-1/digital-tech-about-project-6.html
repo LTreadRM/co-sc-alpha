@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-about-project-5" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 6 of 10
+		</span>
+		<h1 class="govuk-heading-xl">
+			About the project
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="digital-tech-about-project-7" method="send">
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Will you be procuring externally to develop all or part of your solution?
+						</h1>
+					</legend>
+					<div id="hint" class="govuk-hint">
+						Supporting text here
+					</div>
+					
+					<div class="govuk-radios" data-module="govuk-radios">
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="digital-tech-procuring-externally" name="digital-tech-procuring-externally" type="radio" 
+									value="yes" data-aria-controls="digital-tech-procuring-externally-strategy" {{ checked("digital-tech-procuring-externally", "yes") }}>
+							<label class="govuk-label govuk-radios__label" for="digital-tech-procuring-externally">
+								Yes
+							</label>
+						</div>
+						<!-- conditional, requesting date -->
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="digital-tech-procuring-externally-strategy">
+							<div class="govuk-form-group">
+								<h1 class="govuk-heading-s">
+									What is your procurement strategy
+								</h1>
+								<span class="govuk-caption-m">
+									Help text goes here.
+								</span>
+								<textarea class="govuk-textarea" id="digital-tech-procuring-externally-strategy-description" 
+										name="digital-tech-procuring-externally-strategy-description" 
+										rows="5"></textarea>
+							</div>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="digital-tech-procuring-externally" name="digital-tech-procuring-externally" type="radio" 
+									value="no" {{ checked("digital-tech-procuring-externally", "no") }}>
+							<label class="govuk-label govuk-radios__label" for="digital-tech-procuring-externally">
+								No
+							</label>
+						</div>
+						
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

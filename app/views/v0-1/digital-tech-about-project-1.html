@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-task-list" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 1 of 10
+		</span>
+		<h1 class="govuk-heading-xl">
+			About the project
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="digital-tech-about-project-2" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Is this a digital or technology project?
+						</h1>
+					</legend>
+					<div id="hint" class="govuk-hint">
+						Supporting text here
+					</div>
+					
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="digital-tech-digital-or-tech" name="digital-tech-digital-or-tech" type="radio" 
+									value="digital" {{ checked("digital-tech-digital-or-tech", "digital") }}>
+							<label class="govuk-label govuk-radios__label" for="digital-tech-digital-or-tech">
+								Digital
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="digital-tech-digital-or-tech" name="digital-tech-digital-or-tech" type="radio" 
+									value="tech" data-aria-controls="digital-tech-describe-tech" {{ checked("digital-tech-digital-or-tech", "tech") }}>
+							<label class="govuk-label govuk-radios__label" for="digital-tech-digital-or-tech">
+								Technology
+							</label>
+						</div>
+						<!-- conditional, requesting date -->
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="digital-tech-describe-tech">
+							<div class="govuk-form-group">
+								<h1 class="govuk-heading-s">
+									Describe the technology you are requesting money for?
+								</h1>
+								<span class="govuk-caption-m">
+									Help text goes here.
+								</span>
+								<textarea class="govuk-textarea" id="digital-tech-describe-tech-detail" name="digital-tech-describe-tech-detail" 
+										rows="5"></textarea>
+							</div>
+							<div class="govuk-form-group">
+								<h1 class="govuk-heading-s">
+									How will the proposed technology provide value for money?
+								</h1>
+								<span class="govuk-caption-m">
+									Help text goes here.
+								</span>
+								<textarea class="govuk-textarea" id="digital-tech-describe-tech-value" name="digital-tech-describe-tech-value" 
+										rows="5"></textarea>
+							</div>
+						</div>
+
+						
+						
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-about-project-4" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 5 of 10
+		</span>
+		<h1 class="govuk-heading-xl">
+			About the project
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="digital-tech-about-project-6" method="send">
+
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Please describe your proposed solution?
+						</h1>
+					</legend>
+					<div id="hint" class="govuk-hint">
+						Supporting text here
+					</div>
+
+					<div class="govuk-form-group">
+						<textarea class="govuk-textarea" id="digital-tech-about-5-describe-solution" 
+								name="digital-tech-about-5-describe-solution" 
+								rows="5"></textarea>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
