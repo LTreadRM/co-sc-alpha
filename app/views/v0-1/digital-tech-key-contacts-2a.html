@@ -1,0 +1,105 @@
+ {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-task-list" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<h1 class="govuk-heading-xl">
+			Key contacts
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<h2 class="govuk-heading-m">
+			Would you like anyone else copied into communications about this request?
+		</h2>
+
+		<p>
+			In some cases, you may want to keep a spend control business 
+			partner or internal assurance lead informed of case progress. When you 
+			invite someone, they will be sent an email with details of this case. 
+		</p>
+	</div>
+
+    <div class="govuk-grid-column-full">
+		<div class="govuk-form-group">
+			<a href="digital-tech-key-contacts-2b">
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 0px">
+					Add new contact
+				</button>
+			</a>
+		</div>
+		<form action="sending-key-contacts" method="send">
+			<fieldset class="govuk-fieldset">
+				<table class="govuk-table govuk-!-font-size-14">
+					<thead class="govuk-table__head">
+						<tr class="govuk-table__row">
+							<th scope="col" class="govuk-table__header">Name (role)</th>
+							<th scope="col" class="govuk-table__header">Email address</th>
+							<th scope="col" class="govuk-table__header">Date invited</th>
+							<th scope="col" class="govuk-table__header">Action</th>
+						</tr>
+					</thead>
+					<tbody class="govuk-table__body">
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								William Sykes (Project lead)
+							</td>
+							<td class="govuk-table__cell">
+								<a href="mailto:b.sykes@dept.gov.uk">
+									b.sykes@dept.gov.uk
+								</a>
+							</td>
+							<td class="govuk-table__cell">22 October 2021</td>
+							<td class="govuk-table__cell">
+								<a href="#">
+									Remove
+								</a>
+							</td>
+						</tr>
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								Gareth Edwards (Spend Control lead)
+							</td>
+							<td class="govuk-table__cell">
+								<a href="mailto:g.edwards4@dept.gov.uk">
+									g.edwards4@dept.gov.uk
+								</a>
+							</td>
+							<td class="govuk-table__cell">23 October 2021</td>
+							<td class="govuk-table__cell">
+								<a href="#">
+									Remove
+								</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</fieldset>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<button class="govuk-button" data-module="govuk-button">
+					Save and continue
+				</button>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
