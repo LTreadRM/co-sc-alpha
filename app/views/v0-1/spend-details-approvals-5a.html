@@ -1,0 +1,121 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="sending-spend-details-approvals-3" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 5 of 5
+		</span>
+		<h1 class="govuk-heading-xl">
+			Spend details and approvals
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="sending-spend-details-approvals-5" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Critical dates for your project that we should 
+							consider when processing this request
+						</h1>
+					</legend>
+					<div id="waste-hint" class="govuk-hint">
+						This table shows the critical dates for this case. You can add 
+						new dates as and when you find out about that, and you can 
+						remove any that are incorrect. 
+					</div>
+					<div class="govuk-form-group">
+						<a href="digital-tech-key-contacts-2b">
+							<button class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 30px">
+								Add a new date
+							</button>
+						</a>
+					</div>
+					<table class="govuk-table govuk-!-font-size-14">
+						<thead class="govuk-table__head">
+							<tr class="govuk-table__row">
+								<th scope="col" class="govuk-table__header">Date</th>
+								<th scope="col" class="govuk-table__header">Event</th>
+								<th scope="col" class="govuk-table__header">Action</th>
+							</tr>
+						</thead>
+						<tbody class="govuk-table__body">
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">
+									31 January 2022
+								</td>
+								<td class="govuk-table__cell">
+									Internal Board assessment
+								</td>
+								<td class="govuk-table__cell">
+									<a href="#">
+										Remove
+									</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">
+									5 April 2022
+								</td>
+								<td class="govuk-table__cell">
+									Alpha service assessment
+								</td>
+								<td class="govuk-table__cell">
+									<a href="#">
+										Remove
+									</a>
+								</td>
+							</tr>
+							<tr class="govuk-table__row">
+								<td class="govuk-table__cell">
+									19 May 2022
+								</td>
+								<td class="govuk-table__cell">
+									Project kick-off
+								</td>
+								<td class="govuk-table__cell">
+									<a href="#">
+										Remove
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+					<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+							style="margin-left: 20px;">
+						Save and quit
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}
