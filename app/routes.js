@@ -30,7 +30,7 @@ router.get('/v0-1/sending-about-spend', function(req, res) {
 })
 
 router.get('/v0-1/request-key-contacts', function(req, res) {
-	res.redirect('/v0-1/digital-tech-key-contacts')
+	res.redirect('/v0-1/digital-tech-key-contacts-2a')
 })
 
 router.get('/v0-1/adding-key-contact', function(req, res) {
