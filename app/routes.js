@@ -57,7 +57,7 @@ router.get('/v0-1/adding-key-contact', function(req, res) {
 	blob.push(req.session.data['full-name'])
 	blob.push(req.session.data['role'])
 	blob.push(req.session.data['email'])
-	blob.push(req.session.data['today'])
+	blob.push(new Date().toLocaleDateString())
 	req.session.data['key_contacts'].push(blob)
 	req.session.save()
 	res.redirect('/v0-1/digital-tech-key-contacts-2a')
