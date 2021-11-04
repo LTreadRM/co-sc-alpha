@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="sending-spend-details-approvals-3" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 5 of 5
+		</span>
+		<h1 class="govuk-heading-xl">
+			Spend details and approvals
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="sending-spend-details-approvals-5b" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							Enter a critical date
+						</h1>
+					</legend>
+					<div id="waste-hint" class="govuk-hint">
+						Here, you can specify a critical date. Enter the date itself and the reason why it is 
+						critical to your application. 
+					</div>
+
+					<div class="govuk-form-group">
+						<fieldset class="govuk-fieldset" role="group" aria-describedby="critical-date-hint">
+							<div id="critical-date-hint" class="critical-date-hint">
+								For example, 27 3 2023
+							</div>
+							<div class="govuk-date-input" id="critical-date">
+								<div class="govuk-date-input__item">
+									<div class="govuk-form-group">
+										<label class="govuk-label govuk-date-input__label" for="critical-date-day">
+											Day
+										</label>
+									<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="critical-date-day" name="critical-date-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+								</div>
+								<div class="govuk-date-input__item">
+									<div class="govuk-form-group">
+										<label class="govuk-label govuk-date-input__label" for="critical-date-month">
+											Month
+										</label>
+									<input class="govuk-input govuk-date-input__input govuk-input--width-2" id="critical-date-month" name="critical-date-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+								</div>
+								<div class="govuk-date-input__item">
+									<div class="govuk-form-group">
+										<label class="govuk-label govuk-date-input__label" for="critical-date-year">
+											Year
+										</label>
+									<input class="govuk-input govuk-date-input__input govuk-input--width-4" id="critical-date-year" name="critical-date-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+								</div>
+							</div>
+						</fieldset>
+						<fieldset class="govuk-fieldset">
+							<div class="govuk-form-group">
+								<h1 class="govuk-heading-s">
+									Tell us what this critical date is about
+								</h1>
+								<span class="govuk-caption-m">
+									Help text goes here.
+								</span>
+								<textarea class="govuk-textarea" id="digital-tech-describe-critical-date" name="digital-tech-describe-critical-date" 
+										rows="5"></textarea>
+							</div>
+						</fieldset>
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+					<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+							style="margin-left: 20px;">
+						Save and quit
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

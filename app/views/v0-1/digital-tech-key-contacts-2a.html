@@ -54,38 +54,40 @@
 						</tr>
 					</thead>
 					<tbody class="govuk-table__body">
+						{% if data['key_contacts'].length === 0 %}
 						<tr class="govuk-table__row">
 							<td class="govuk-table__cell">
-								William Sykes (Project lead)
+								You have not entered any contacts yet
+							</td>
+							<td class="govuk-table__cell">
+							</td>
+							<td class="govuk-table__cell">
+							</td>
+							<td class="govuk-table__cell">
+							</td>
+						</tr>
+						{% else %}
+						{% for contact in data['key_contacts'] %}
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								{{ contact[0] }}
 							</td>
 							<td class="govuk-table__cell">
 								<a href="mailto:b.sykes@dept.gov.uk">
-									b.sykes@dept.gov.uk
+									{{ contact[1] }}
 								</a>
 							</td>
-							<td class="govuk-table__cell">22 October 2021</td>
+							<td class="govuk-table__cell">
+								{{ contact[2] }}
+							</td>
 							<td class="govuk-table__cell">
 								<a href="#">
 									Remove
 								</a>
 							</td>
 						</tr>
-						<tr class="govuk-table__row">
-							<td class="govuk-table__cell">
-								Gareth Edwards (Spend Control lead)
-							</td>
-							<td class="govuk-table__cell">
-								<a href="mailto:g.edwards4@dept.gov.uk">
-									g.edwards4@dept.gov.uk
-								</a>
-							</td>
-							<td class="govuk-table__cell">23 October 2021</td>
-							<td class="govuk-table__cell">
-								<a href="#">
-									Remove
-								</a>
-							</td>
-						</tr>
+						{% endfor %}
+						{% endif %}
 					</tbody>
 				</table>
 
