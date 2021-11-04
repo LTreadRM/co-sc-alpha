@@ -21,6 +21,8 @@ if (req.session.data['activeFlag'] == undefined || req.session.data['activeFlag'
 }
 
 router.get('/v0-1/index', function(req, res) {
+	checkIfActive(req)
+	req.session.save()
 	res.render('v0-1/index')
 })
 
@@ -29,6 +31,8 @@ router.get('/v0-1/signing-in', function(req, res) {
 })
 
 router.get('/v0-1/0-1-add-new-case', function(req, res) {
+	checkIfActive(req)
+	req.session.save()
 	res.redirect('/v0-1/add-new-case')
 })
 
@@ -46,6 +50,7 @@ router.get('/v0-1/sending-about-spend', function(req, res) {
 
 router.get('/v0-1/request-key-contacts', function(req, res) {
 	checkIfActive(req)
+	req.session.save()
 	res.render('v0-1/digital-tech-key-contacts-2a')
 })
 

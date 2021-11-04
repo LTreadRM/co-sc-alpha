@@ -54,7 +54,7 @@
 						</tr>
 					</thead>
 					<tbody class="govuk-table__body">
-						{% if data['key_contacts'].length === 0 %}
+						{% if data['key_contacts'].length === 0 or data['key_contacts'] == undefined %}
 						<tr class="govuk-table__row">
 							<td class="govuk-table__cell">
 								You have not entered any contacts yet

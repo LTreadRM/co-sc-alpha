@@ -63,7 +63,7 @@
 							</tr>
 						</thead>
 						<tbody class="govuk-table__body">
-							{% if data['critical_events'].length === 0 %}
+							{% if data['critical_events'].length === 0 or data['critical_events'] == undefined %}
 							<tr class="govuk-table__row">
 								<td class="govuk-table__cell">
 									You have not entered any dates yet
