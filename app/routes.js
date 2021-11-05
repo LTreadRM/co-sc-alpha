@@ -122,4 +122,8 @@ router.get('/v0-1/sending-about-project-10', function(req, res) {
 	res.redirect('/v0-1/digital-tech-task-list')
 })
 
+router.get('/v0-1/sending-digital-tech-code-practice', function(req, res) {
+	res.redirect('/v0-1/digital-tech-task-list')
+})
+
 
