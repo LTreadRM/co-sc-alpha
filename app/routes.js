@@ -9,6 +9,7 @@ function initialiseVariables(req) {
 	console.log("Initialising variables now")
 	req.session.data['key_contacts'] = []
 	req.session.data['critical_events'] = []
+	req.session.data['costs'] = []
 	req.session.save()
 	req.session.data['activeFlag'] = true
 	req.session.save()
@@ -124,6 +125,39 @@ router.get('/v0-1/sending-about-project-10', function(req, res) {
 
 router.get('/v0-1/sending-digital-tech-code-practice', function(req, res) {
 	res.redirect('/v0-1/digital-tech-task-list')
+})
+
+router.get('/v0-1/sending-add-new-cost', function(req, res) {
+	res.redirect('/v0-1/add-new-cost')
+})
+
+router.get('/v0-1/sending-digital-tech-cost-breakdown-1', function(req, res) {
+	/* check variables are initialised */
+	checkIfActive(req)
+	/* grab page variables into a single variable */
+	var blob = []
+	blob.push(req.session.data['cost-year'])
+	blob.push(req.session.data['approved-spend-amount'])
+	blob.push(req.session.data['approved-spend-description'])
+	blob.push(req.session.data['tech-capital-amount'])
+	blob.push(req.session.data['tech-capital-description'])
+	blob.push(req.session.data['tech-operational-amount'])
+	blob.push(req.session.data['tech-operational-description'])
+	blob.push(req.session.data['nontech-operational-amount'])
+	blob.push(req.session.data['nontech-operational-description'])
+	blob.push(req.session.data['exit-costs-amount'])
+	blob.push(req.session.data['exit-costs-description'])
+	blob.push(req.session.data['value-requested-amount'])
+	blob.push(req.session.data['value-requested-description'])
+	var total = parseFloat(req.session.data['approved-spend-amount']) + parseFloat(req.session.data['tech-capital-amount'])
+			+ parseFloat(req.session.data['tech-operational-amount']) + parseFloat(req.session.data['nontech-operational-amount']) + 
+			parseFloat(req.session.data['exit-costs-amount']) + parseFloat(req.session.data['value-requested-amount'])
+	blob.push(total)
+	/* add variables to appropriate initialised variable */
+	req.session.data['costs'].push(blob)
+	req.session.save()
+	
+	res.redirect('/v0-1/digital-tech-cost-breakdown-1')
 })
 
 
