@@ -20,7 +20,7 @@
 
 				<h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
-				<h2 class="govuk-heading-m">Personal details</h2>
+				<h2 class="govuk-heading-m">Your details</h2>
 
 				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
 					<div class="govuk-summary-list__row">
@@ -28,8 +28,8 @@
 							Full name
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['full-name'] != '' %}
-								{{ data['full=name'] }}
+							{% if data['full-name'] != '' and data['full-name'] != defined %}
+								{{ data['full-name'] }}
 							{% else %}
 								You need to provide a full name.
 							{% endif %}
@@ -37,133 +37,228 @@
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="#">
 								Change								
-								<span class="govuk-visually-hidden">name</span>
+								<span class="govuk-visually-hidden">full name</span>
 							</a>
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Date of birth
+							Department
 						</dt>
 						<dd class="govuk-summary-list__value">
-							5 January 1978
+							{% if data['department'] != '' %}
+								{{ data['department'] }}
+							{% else %}
+								You need to provide a department.
+							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="#">
 								Change								
-								<span class="govuk-visually-hidden">date of birth</span>
+								<span class="govuk-visually-hidden">department</span>
 							</a>
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							Address
+							Role
 						</dt>
 						<dd class="govuk-summary-list__value">
-							72 Guild Street							<br>London<br>SE23 6FH
-								</dd>
-								<dd class="govuk-summary-list__actions">
-									<a class="govuk-link" href="#">
-										Change										
-										<span class="govuk-visually-hidden">address</span>
-									</a>
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Contact details
-								</dt>
-								<dd class="govuk-summary-list__value">
-									<p class="govuk-body">07700 900457</p>
-									<p class="govuk-body">sarah.phillips@example.com</p>
-								</dd>
-								<dd class="govuk-summary-list__actions">
-									<a class="govuk-link" href="#">
-										Change										
-										<span class="govuk-visually-hidden">contact details</span>
-									</a>
-								</dd>
-							</div>
-						</dl>
-
-						<h2 class="govuk-heading-m">Application details</h2>
-
-						<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Previous application number
-								</dt>
-								<dd class="govuk-summary-list__value">
-									502135326
-								</dd>
-								<dd class="govuk-summary-list__actions">
-									<a class="govuk-link" href="#">
-										Change										
-										<span class="govuk-visually-hidden">previous application number</span>
-									</a>
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Licence type
-								</dt>
-								<dd class="govuk-summary-list__value">
-									For personal use
-								</dd>
-								<dd class="govuk-summary-list__actions">
-									<a class="govuk-link" href="#">
-										Change										
-										<span class="govuk-visually-hidden">licence type</span>
-									</a>
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Home address
-								</dt>
-								<dd class="govuk-summary-list__value">
-									72 Guild Street									
-									<br/>London<br/>SE23 6FH
-								</dd>
-								<dd class="govuk-summary-list__actions">
-									<a class="govuk-link" href="#">
-										Change										
-										<span class="govuk-visually-hidden">home address</span>
-									</a>
-								</dd>
-							</div>
-							<div class="govuk-summary-list__row">
-								<dt class="govuk-summary-list__key">
-									Licence period
-								</dt>
-								<dd class="govuk-summary-list__value">
-									Valid for 6 months
-								</dd>
-								<dd class="govuk-summary-list__actions">
-									<a class="govuk-link" href="#">
-										Change										
-										<span class="govuk-visually-hidden">licence period</span>
-									</a>
-								</dd>
-							</div>
-						</dl>
-
-						<h2 class="govuk-heading-m">Now send your application</h2>
-
-						<p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
-
-						<form action="/form-handler" method="post" novalidate>
-
-						<input type="hidden" name="answers-checked" value="true">
-
-							<button class="govuk-button" data-module="govuk-button">
-								Accept and send
-							</button>
-
-						</form>
-
+							{% if data['role'] != '' %}
+								{{ data['role'] }}
+							{% else %}
+								You need to provide a department.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">department</span>
+							</a>
+						</dd>
 					</div>
-				</div>
-			</main>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Phone number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['phone-number'] != '' %}
+								{{ data['phone-number'] }}
+							{% else %}
+								You need to provide a telephone number.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">telephone number</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Email
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['email'] != '' %}
+								{{ data['email'] }}
+							{% else %}
+								You need to provide an email.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">email address</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
+				<h2 class="govuk-heading-m">Your project's details</h2>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Reference number
+						</dt>
+						<dd class="govuk-summary-list__value">
+							dt43954589dsj
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">reference number</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Project title
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['spend-title'] != '' and data['spend-title'] != defined %}
+								{{ data['spend-title'] }}
+							{% else %}
+								You need to provide a title for the spend.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">spend title</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Description of spend
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['spend-description'] != '' and data['spend-description'] != defined %}
+								{{ data['spend-description'] }}
+							{% else %}
+								You need to provide a description of the spend.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+										Change										
+								<span class="govuk-visually-hidden">spend description</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Area of spend
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['spend-type'] != '' and data['spend-type'] != defined %}
+								{{ data['spend-type'] }}
+							{% else %}
+								You need to provide a spent type.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">area of spend</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Commercial assurance needed?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['commercial-assurance'] != '' and data['commercial-assurance`'] != defined %}
+								{{ data['commercial-assurance'] }}
+							{% else %}
+								You need to indicate if the spend is over £2 million.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Is commercial assurance needed</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Expected end date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['expected-end-date-day'] != '' and data['expected-end-date-day'] != defined %}
+								{{ data['expected-end-date-day'] }}.{{ data['expected-end-date-month'] }}.{{ data['expected-end-date-year'] }}
+							{% else %}
+								You need to provide an end date.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Expected end date</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							All approvals secured?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['received-necessary-approvals'] != '' and data['received-necessary-approvals'] != defined %}
+								{{ data['received-necessary-approvals'] }}
+							{% else %}
+								You need to indicate if all approvals have been secured.
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">All approvals secured</span>
+							</a>
+						</dd>
+					</div>
+
+				</dl>
+
+				<h2 class="govuk-heading-m">Now send your application</h2>
+
+				<p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+				<form action="/form-handler" method="post" novalidate>
+
+				<input type="hidden" name="answers-checked" value="true">
+
+					<button class="govuk-button" data-module="govuk-button">
+								Accept and send
+					</button>
+
+				</form>
+
+			</div>
 		</div>
+	</main>
+</div>
 {% endblock %}
