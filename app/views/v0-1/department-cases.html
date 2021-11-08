@@ -51,10 +51,92 @@
 					<input class="govuk-input" id="event-name" name="event-name" type="text">
 				</div>
 				<!-- filters go here -->
+				<div class="govuk-form-group">
+					<h2 class="govuk-heading-s">
+						Department
+					</h2>
+					<div class="govuk-form-group">
+						<fieldset class="govuk-fieldset">
+						<div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Ministry of Justice
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									BEIS
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Home Office
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Ministry of Defence
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									International Trade
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="govuk-form-group">
+					<h2 class="govuk-heading-s">
+						Spend type
+					</h2>
+					<div class="govuk-form-group">
+						<fieldset class="govuk-fieldset">
+						<div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Advertising
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Commercial
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" 
+										type="checkbox" value="hmrc" checked>
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Digital and technology
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Consultancy
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Property
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<!-- Sort by dropdown and table content-->
-			<div class="govuk-grid-column-three-quarters-from-desktop">
+			<div class="govuk-grid-column-three-quarters-from-desktop" style="float: right;">
 				<div class="govuk-form-group" style="float:right;">
 					<p>
 						Sort by 
@@ -93,7 +175,7 @@
 								</div>
 							</td>
 							<td class="govuk-table__cell">
-								<a href="#">
+								<a href="getting-example-case">
 									Cloud migration project ABC
 								</a>
 							</td>

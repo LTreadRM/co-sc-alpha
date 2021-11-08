@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-<a href="sending-spend-details-approvals-3"
+<a href="digital-tech-task-list"
    class="govuk-back-link">Back</a>
 {% endblock %}
 
@@ -18,8 +18,12 @@
 		<div class="govuk-grid-row">
 			<div class="govuk-grid-column-full">
 
-				<h1 class="govuk-heading-l">Check your answers before sending your application</h1>
+				<h1 class="govuk-heading-l">
+					{{ title }}
+				</h1>
 
+
+				<!-- YOUR DETAILS -->
 				<h2 class="govuk-heading-m">Your details</h2>
 
 				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -115,6 +119,8 @@
 					</div>
 				</dl>
 
+
+				<!-- PROJECT DETAILS -->
 				<h2 class="govuk-heading-m">Your project's details</h2>
 
 				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -130,6 +136,16 @@
 								Change										
 								<span class="govuk-visually-hidden">reference number</span>
 							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Status
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Draft
+						</dd>
+						<dd class="govuk-summary-list__actions">
 						</dd>
 					</div>
 					<div class="govuk-summary-list__row">
@@ -243,6 +259,608 @@
 
 				</dl>
 
+
+				<!-- KEY CONTACTS AND SPEND DETAILS -->
+				<h2 class="govuk-heading-m">Key contacts and spend details</h2>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						{% if data['key_contacts'].length === 0 or data['key_contacts'] === undefined %}
+						<dt class="govuk-summary-list__key">
+							Key contacts
+						</dt>
+						<dd class="govuk-summary-list__value">
+							You have not entered any key contacts
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Key contacts and spend details</span>
+							</a>
+						</dd>
+						{% else %}
+						{% for contact in data['key_contacts'] %}
+						<dt class="govuk-summary-list__key">
+							Contact
+						</dt>
+						<dd class="govuk-summary-list__value">
+							contact[0] <br />
+							contact[1] <br />
+							contact[2] <br />
+							contact[3] <br />
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">reference number</span>
+							</a>
+						</dd>
+						{% endfor %}
+						{% endif %}
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Delivery stage
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['delivery-stage'].length === undefined %}
+							You have not entered the delivery stage
+						{% else %}
+							{{ data['delivery-stage'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Delivery stage</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							IPA review needed?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['ipa-review'].length === undefined %}
+							You have not entered this
+						{% else %}
+							{{ data['ipa-review'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">IPA review needed</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Treasury approval needed?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['treasury-approval-required'].length === undefined %}
+							You have not entered this
+						{% else %}
+							{{ data['treasury-approval-required'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Treasury approval needed</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Service assessment needed?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['service-assessment-required'].length === undefined %}
+							You have not entered this
+						{% else %}
+							{{ data['service-assessment-required'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Service assessment needed</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Critical dates
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['critical_events'].length === 0 or data['critical_events'] === undefined %}
+							You have not entered any dates
+						{% else %}
+							{% for event in data['key_contacts'] %}
+								{{ event[0] }}: {{ event[1] }}
+							{% endfor %}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Critical dates</span>
+							</a>
+						</dd>
+					</div>
+
+				</dl>
+
+
+				<!-- ABOUT THIS PROJECT -->
+				<h2 class="govuk-heading-m">About this project</h2>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Is this project digital or tech?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-digital-or-tech'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-digital-or-tech'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Digital or technology?</span>
+							</a>
+						</dd>
+					</div>
+					
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Is this a response to a ministerial or legal requirement?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-minister-legal-requirement'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-minister-legal-requirement'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Is this a response to a ministerial or legal requirement?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							What problem is this project trying to solve?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-about-3-textarea'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-about-3-textarea'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">What problem is this project trying to solve?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							How many users are affected by or would use your solution?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-number-people'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-number-people'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">How many users are affected by or would use your solution?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Description of proposed solution
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-about-5-describe-solution'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-about-5-describe-solution'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Description of proposed solution</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Will you be procuring externally at all?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-procuring-externally'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-procuring-externally'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Will you be procuring externally at all?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Do users need to authenticate?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-users-authenticate'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-users-authenticate'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Do users need to authenticate?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Is the service domain on GOV.UK?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-on-govuk'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-on-govuk'] }}
+							{% if data['digital-tech-on-govuk'] == "no" %}
+								<br />
+								{{ data['digital-tech-domain-name'] }}
+							{% endif %}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Is the service domain on GOV.UK?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							What technology are you requesting money for?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-what-technology-description'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-what-technology-description'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">What technology are you requesting money for?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							How does the proposed technology provide value for money?
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-tech-value-description'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-tech-value-description'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">How does the proposed technology provide value for money?</span>
+							</a>
+						</dd>
+					</div>
+
+				</dl>
+
+				<!-- COST BREAKDOWN -->
+				<h2 class="govuk-heading-m">Cost breakdown</h2>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-digital-or-tech'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['digital-tech-digital-or-tech'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Digital or technology?</span>
+							</a>
+						</dd>
+					</div>
+					
+					
+					
+				</dl>
+
+				
+				<!-- TECHNOLOGY CODE OF PRACTICE -->
+				<h2 class="govuk-heading-m">Technology code of practice</h2>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							1. Define user needs
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-1'] === undefined and data['file-upload-1'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-1'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Define user needs</span>
+							</a>
+						</dd>
+					</div>
+					
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							2. Make things accessible and inclusive
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-2'] === undefined and data['file-upload-2'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-2'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Make things accessible and inclusive</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							3. Be open and use open source
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-3'] === undefined and data['file-upload-3'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-3'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Be open and use open source</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							4. Make use of open standards
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-4'] === undefined and data['file-upload-4'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-4'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">Make use of open standards</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							5. Use cloud first
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-5'] === undefined and data['file-upload-5'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-5'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">5. Use cloud first</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							6. Make things secure
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-6'] === undefined and data['file-upload-6'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-6'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">6. Make things secure</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							7. Make privacy integral
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-7'] === undefined and data['file-upload-7'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-7'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">7. Make privacy integral</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							8. Share, reuse and collaborate
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-8'] === undefined and data['file-upload-8'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-8'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">8. Share, reuse and collaborate</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							9. Integrate and adapt technology
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-9'] === undefined and data['file-upload-9'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-9'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">9. Integrate and adapt technology</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							10. Make better use of data
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-10'] === undefined and data['file-upload-10'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-10'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">10. Make better use of data</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							11. Define your purchasing strategy
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-11'] === undefined and data['file-upload-11'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-11'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">11. Define your purchasing strategy</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							12. Meet the Service Standard
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-12'] === undefined and data['file-upload-12'] === undefined %}
+							You have not answered this	
+						{% else %}
+							{{ data['tech-cop-point-12'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								Change										
+								<span class="govuk-visually-hidden">12. Meet the Service Standard</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
+				
+			</div>
+			<div class="govuk-grid-column-two-thirds">
 				<h2 class="govuk-heading-m">Now send your application</h2>
 
 				<p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>

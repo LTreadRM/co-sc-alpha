@@ -60,9 +60,10 @@ router.get('/v0-1/adding-key-contact', function(req, res) {
 	checkIfActive(req)
 	/* take details from post and add to array of contacts */
 	var blob = []
-	blob.push(req.session.data['full-name'])
-	blob.push(req.session.data['role'])
-	blob.push(req.session.data['email'])
+	blob.push(req.session.data['c-full-name'])
+	blob.push(req.session.data['c-role'])
+	blob.push(req.session.data['c-phone-number'])
+	blob.push(req.session.data['c-email'])
 	blob.push(new Date().toLocaleDateString())
 	req.session.data['key_contacts'].push(blob)
 	req.session.save()
@@ -158,6 +159,20 @@ router.get('/v0-1/sending-digital-tech-cost-breakdown-1', function(req, res) {
 	req.session.save()
 	
 	res.redirect('/v0-1/digital-tech-cost-breakdown-1')
+})
+
+router.get('/v0-1/requesting-digital-tech-check-your-answers', function(req, res) {
+	checkIfActive(req)
+	req.session.save()
+	title = 'Check your answers before sending your application'
+	res.render('v0-1/digital-tech-check-your-answers', {title: title})
+})
+
+router.get('/v0-1/getting-example-case', function(req, res) {
+	checkIfActive(req)
+	req.session.save()
+	title = 'Case ref: dt43954589dsj'
+	res.render('v0-1/digital-tech-check-your-answers', {title: title})
 })
 
 
