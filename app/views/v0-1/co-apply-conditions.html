@@ -26,6 +26,7 @@
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 
+		<form action="sending-co-all-conditions" method="send">
 		<div class="govuk-form-group">
 			<fieldset class="govuk-fieldset" aria-describedby="hint">
 				<div id="hint" class="govuk-hint">
@@ -219,11 +220,11 @@
 
 					<a href="sending-add-new-condition">
 						{% if data['conditions'].length === 0 or data['conditions'] == undefined %}
-						<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+						<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button">
 							Add a condition
 						</button>
 						{% else %}
-						<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+						<button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="button">
 							Add another condition
 						</button>
 						{% endif %}
@@ -237,18 +238,15 @@
 			<button class="govuk-button" data-module="govuk-button">
 					Save and continue
 			</button>
-			<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-					style="margin-left: 20px;">
-					Save and quit
-			</button>
+			<a href="sending-co-conditions-required">
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+						style="margin-left: 20px;">
+						Save
+				</button>
+			</a>
 		</div>
-		<div class="govuk-form-group" ">
-		<p>
-				Save and quit will return you to the sections-to-complete list
-		</p>
+		</form>
 	</div>
-
-</div>
 </div>
 
 {% endblock %}

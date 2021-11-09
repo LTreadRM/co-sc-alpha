@@ -1,0 +1,206 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="#"
+   class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-width-container">
+	<main class="govuk-main-wrapper " id="main-content" role="main">
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-two-thirds">
+
+				<span class="govuk-caption-m">
+					Case number dt43954589dsj
+				</span>
+				<h1 class="govuk-heading-l">
+					Check your conditions
+				</h1>
+
+				<h2 class="govuk-heading-m">
+					What you need to do
+				</h2>
+
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+							incididunt ut labore et dolore magna aliqua.
+				</p>
+
+				<!-- ITERATE THROUGH CONDITIONS -->
+				
+				{% if data['conditions'].length === 0 or data['conditions'] === undefined %}
+				
+				<div class="govuk-warning-text">
+					<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+					<strong class="govuk-warning-text__text">
+						<span class="govuk-warning-text__assistive">
+							Warning
+						</span>
+						You have not entered any conditions yet
+					</strong>
+				</div>
+				
+				{% else %}
+				{% for cond in data['conditions'] %}
+
+				<h2 class="govuk-heading-m">
+					Condition {{ loop.index }}
+				</h2>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-3">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Condition type 
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ cond[3] }}
+							<br />
+							
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								
+								<span class="govuk-visually-hidden">full name</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-3">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Condition description 
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ cond[4] }}
+							
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								
+								<span class="govuk-visually-hidden">full name</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-3">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Guidance applied to the condition
+						</dt>
+						<dd class="govuk-summary-list__value">
+							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+							incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+							nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+							
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								
+								<span class="govuk-visually-hidden">full name</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-3">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Condition review date
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ cond[5] }}
+							
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								
+								<span class="govuk-visually-hidden">full name</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
+				<dl class="govuk-summary-list govuk-!-margin-bottom-3">
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Date condition needs to be met by
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ cond[5] }}
+							
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="#">
+								
+								<span class="govuk-visually-hidden">full name</span>
+							</a>
+						</dd>
+					</div>
+				</dl>
+
+				<h2 class="govuk-heading-m">
+					Response to conditions
+				</h2>
+
+				<p>
+					Please provide information for the Cabinet Office as to how you have 
+					responded and met the condition set. Supporting evidence and related 
+					documents can be attached below.
+				</p>
+				
+				<div class="govuk-form-group" style="padding: 40px; border: 1px solid gray; border-left: 8px solid #1d70b8;">
+					
+					<h2 class="govuk-heading-s">
+						Dave Smith (Digital and Technology Lead)
+					</h2>
+					<p>
+						Please see attached file for evidence.
+					</p>
+					<a href="#">
+						Supporting evidence.pdf
+					</a>
+
+
+				</div>
+
+				<div class="govuk-form-group" style="padding: 40px; border: 1px solid gray;">
+					<p>
+						Add comments and attachments
+					</p>
+					<textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+						<label class="govuk-label" for="file-upload-1">
+							Upload a file
+						</label>
+					<input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+
+					<p class="govuk-body-l" style="margin-top: 30px;">
+						The Cabinet Office will be notified of your submission.
+					</p>
+
+					<button class="govuk-button" data-module="govuk-button">
+						Submit evidence
+					</button>
+					<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+							style="margin-left: 20px;">
+						Save a draft
+					</button>
+				</div>
+
+				{% endfor %}
+				{% endif %}
+
+			</div>
+		</div>
+	</main>
+</div>
+{% endblock %}

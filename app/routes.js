@@ -13,6 +13,19 @@ function initialiseVariables(req) {
 	req.session.data['conditions'] = []
 	req.session.save()
 	req.session.data['activeFlag'] = true
+
+	blob = []
+	blob.push('Digital and technology')
+	blob.push('Strategy')
+	blob.push('1. Discovery government strategy')
+	blob.push('Ensure payment')
+	blob.push('Description of condition. Lorem ipsum')
+	blob.push('31 March 2022')
+	blob.push('Yes')
+	blob.push('A month before')
+	blob.push('')
+	blob.push('')
+	req.session.data['conditions'] = [blob]
 	req.session.save()
 }
 
@@ -216,6 +229,25 @@ router.get('/v0-1/sending-new-condition', function(req, res) {
 	req.session.save()
 	
 	res.redirect('/v0-1/co-apply-conditions')
+})
+
+router.get('/v0-1/sending-co-case-decision', function(req, res) {
+	decision = req.session.data['co-case-decision']
+	if (decision === "approve") {
+		res.redirect('/v0-1/co-case-approved')
+	} else if (decision === "conditions") {
+		res.redirect('/v0-1/co-apply-conditions')
+	} else if (decision === "reject") {
+		res.redirect('/v0-1/co-case-rejected')
+	} else {
+		/* should not get here */
+		res.redirect('/v0-1/co-example-case')
+	}
+})
+
+router.get('/v0-1/sending-co-all-conditions', function(req, res) {
+	checkIfActive(req)
+	res.redirect('/v0-1/co-check-your-conditions')
 })
 
 
