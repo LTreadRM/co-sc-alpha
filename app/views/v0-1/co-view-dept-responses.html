@@ -19,10 +19,10 @@
 			<div class="govuk-grid-column-two-thirds">
 
 				<span class="govuk-caption-m">
-					Case number dt43954589dsj
+					Case number
 				</span>
 				<h1 class="govuk-heading-l">
-					Check your conditions
+					Case number dt43954589dsj
 				</h1>
 
 				<h2 class="govuk-heading-m">
@@ -174,7 +174,31 @@
 				</div>
 
 				<div class="govuk-form-group" style="padding: 40px; border: 1px solid gray;">
-					<p>
+
+					<h2 class="govuk-heading-s">
+						Has the condition been met?
+					</h2>
+					<div class="govuk-form-group">
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="co-conditions-met" name="co-conditions-met" type="radio" 
+										value="fully"}>
+								<label class="govuk-label govuk-radios__label" for="co-conditions-met">
+									Fully
+								</label>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="co-conditions-met" name="co-conditions-met" type="radio" 
+										value="notmet"}>
+								<label class="govuk-label govuk-radios__label" for="co-conditions-met">
+									Not met
+								</label>
+							</div>
+						</div>
+					</div>
+
+
+					<p class="govuk-body" style="margin-top: 50px;">
 						Add comments and attachments
 					</p>
 					<textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
@@ -183,19 +207,48 @@
 						</label>
 					<input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
 
-					<p class="govuk-body-l" style="margin-top: 30px;">
-						The Cabinet Office will be notified of your submission.
-					</p>
+					<div class="govuk-form-group">
+						<h2 class="govuk-heading-s">
+							Would you like to change the review date?
+						</h2>
+						<div class="govuk-radios" data-module="govuk-radios">
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="co-change-review-date" name="co-change-review-date" type="radio" 
+										value="yes" data-aria-controls="co-change-review-date-hidden"}>
+								<label class="govuk-label govuk-radios__label" for="co-change-review-date">
+									Yes
+								</label>
+							</div>
+							<!-- conditional, requesting optional comments -->
+							<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="co-change-review-date-hidden">
+								<div class="govuk-form-group">
+									<h1 class="govuk-heading-s">
+										What should the new review date be?
+									</h1>
+									<input class="govuk-input govuk-!-width-one-third" id="condition-change-review-date" 
+											name="condition-change-review-date" type="date" autocomplete="date">
+								</div>
+							</div>
+							<div class="govuk-radios__item">
+								<input class="govuk-radios__input" id="co-change-review-date" name="co-change-review-date" type="radio" 
+										value="no"}>
+								<label class="govuk-label govuk-radios__label" for="co-change-review-date">
+									No
+								</label>
+							</div>
+						</div>
+					</div>
 
-					<button class="govuk-button" data-module="govuk-button">
-						Submit evidence
-					</button>
-					<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-							style="margin-left: 20px;">
-						Save a draft
-					</button>
+					<div class="govuk-form-group">
+						<button class="govuk-button" data-module="govuk-button">
+							Submit review
+						</button>
+						<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+								style="margin-left: 20px;">
+							Save a draft
+						</button>
+					</div>
 				</div>
-
 				{% endfor %}
 				{% endif %}
 
