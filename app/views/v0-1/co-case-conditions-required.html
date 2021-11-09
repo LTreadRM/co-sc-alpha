@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="#" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			
+		</span>
+		<h1 class="govuk-heading-xl">
+			Are case conditions required?
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+		<form action="sending-co-conditions-required" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="hint">
+					
+					<div class="govuk-radios" data-module="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="co-conditions-required" name="co-conditions-required" type="radio" 
+									value="yes" {{ checked("co-conditions-required", "yes") }}>
+							<label class="govuk-label govuk-radios__label" for="co-conditions-required">
+								Yes
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="co-conditions-required" name="co-conditions-required" type="radio" 
+									value="no" data-aria-controls="co-conditions-required-hidden" {{ checked("co-conditions-required", "no") }}>
+							<label class="govuk-label govuk-radios__label" for="co-conditions-required">
+								No
+							</label>
+						</div>
+						<!-- conditional, requesting optional comments -->
+						<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="co-conditions-required-hidden">
+							<div class="govuk-form-group">
+								<h1 class="govuk-heading-s">
+									Additional comments (optional)
+								</h1>
+								<textarea class="govuk-textarea" id="co-conditions-required-comments" name="co-conditions-required-comments" 
+										rows="5"></textarea>
+							</div>
+						</div>
+
+					</div>
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px;">
+				<fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+					<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+					</button>
+				</fieldset>
+			</div>
+
+		</form>
+
+	</div>
+</div>
+
+{% endblock %}

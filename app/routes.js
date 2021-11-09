@@ -10,6 +10,7 @@ function initialiseVariables(req) {
 	req.session.data['key_contacts'] = []
 	req.session.data['critical_events'] = []
 	req.session.data['costs'] = []
+	req.session.data['conditions'] = []
 	req.session.save()
 	req.session.data['activeFlag'] = true
 	req.session.save()
@@ -29,6 +30,10 @@ router.get('/v0-1/index', function(req, res) {
 
 router.get('/v0-1/signing-in', function(req, res) {
 	res.redirect('/v0-1/your-cases')
+})
+
+router.get('/v0-1/co-signing-in', function(req, res) {
+	res.redirect('/v0-1/co-cases')
 })
 
 router.get('/v0-1/0-1-add-new-case', function(req, res) {
@@ -173,6 +178,44 @@ router.get('/v0-1/getting-example-case', function(req, res) {
 	req.session.save()
 	title = 'Case ref: dt43954589dsj'
 	res.render('v0-1/digital-tech-check-your-answers', {title: title})
+})
+
+router.get('/v0-1/sending-co-conditions-required', function(req, res) {
+	if (req.session.data['co-conditions-required'] == "no") {
+		res.render('v0-1/co-check-no-conditions')
+	} else {
+		res.render('v0-1/co-apply-conditions')
+	}
+})
+
+router.get('/v0-1/sending-add-new-condition', function(req, res) {
+	res.redirect('/v0-1/co-add-new-condition')
+})
+
+router.get('/v0-1/sending-new-condition', function(req, res) {
+	/* check variables are initialised */
+	checkIfActive(req)
+	/* grab page variables into a single variable */
+	var blob = []
+	blob.push(req.session.data['dd-control-area'])
+	blob.push(req.session.data['dd-category'])
+	blob.push(req.session.data['dd-condition'])
+	blob.push(req.session.data['condition-name'])
+	blob.push(req.session.data['condition-description'])
+	blob.push(req.session.data['condition-review-date'])
+	blob.push(req.session.data['co-conditions-notifications'])
+	blob.push(req.session.data['notify-when'])
+	blob.push(req.session.data['conditional-date'])
+	blob.push(req.session.data[''])
+	var total = parseFloat(req.session.data['approved-spend-amount']) + parseFloat(req.session.data['tech-capital-amount'])
+			+ parseFloat(req.session.data['tech-operational-amount']) + parseFloat(req.session.data['nontech-operational-amount']) + 
+			parseFloat(req.session.data['exit-costs-amount']) + parseFloat(req.session.data['value-requested-amount'])
+	blob.push(total)
+	/* add variables to appropriate initialised variable */
+	req.session.data['conditions'].push(blob)
+	req.session.save()
+	
+	res.redirect('/v0-1/co-apply-conditions')
 })
 
 

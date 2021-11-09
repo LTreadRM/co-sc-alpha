@@ -1,0 +1,227 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="digital-tech-task-list" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			Step 1 of 2
+		</span>
+		<h1 class="govuk-heading-xl">
+			Add new year of costs
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<form action="sending-digital-tech-cost-breakdown-1" method="send">
+			<div class="govuk-form-group">
+				<fieldset class="govuk-fieldset" aria-describedby="hint">
+					<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+						<h1 class="govuk-fieldset__heading">
+							
+						</h1>
+					</legend>
+					<div id="hint" class="govuk-hint">
+						Select a year and enter it's associated costs.
+					</div>
+					
+					<div class="govuk-form-group">
+
+						<label class="govuk-label" for="cost-year">
+							Select the year
+						</label>
+						<select class="govuk-select" id="cost-year" name="cost-year">
+						<option value="2021-2022">2021-2022</option>
+						<option value="2022-2023">2022-2023</option>
+						<option value="2023-2024">2023-2024</option>
+						<option value="2024-2025">2024-2025</option>
+						<option value="2025-2026">2025-2026</option>
+						<option value="2026-2027">2026-2027</option>
+						<option value="2027-2028">2027-2028</option>
+						<option value="2028-2029">2028-2029</option>
+						<option value="2029-2030">2029-2030</option>
+						</select>
+					</div>
+
+
+					<!-- approved spend -->
+					<div class="govuk-form-group">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+								Approved spend brought forward (optional)
+							</h1>
+						</legend>
+						<div id="hint" class="govuk-hint">
+							Help text here
+						</div>
+						<div class="govuk-input__wrapper">
+							<div class="govuk-input__prefix" aria-hidden="true">£</div>
+							<input class="govuk-input govuk-input--width-10" id="approved-spend-amount" name="approved-spend-amount" type="text">
+						</div>
+					</div>
+
+					<div class="govuk-form-group">
+						<div id="hint" class="govuk-hint">
+							Describe the approved spend brought forward (optional).
+						</div>
+						<textarea class="govuk-textarea" id="approved-spend-description" name="approved-spend-description" rows="5" aria-describedby="more-detail-hint"></textarea>
+					</div>
+
+
+					<!-- tech capital expenditure -->
+					<div class="govuk-form-group">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+								Technology - Capital expenditure (optional)
+							</h1>
+						</legend>
+						<div id="hint" class="govuk-hint">
+							Help text here
+						</div>
+						<div class="govuk-input__wrapper">
+							<div class="govuk-input__prefix" aria-hidden="true">£</div>
+							<input class="govuk-input govuk-input--width-10" id="tech-capital-amount" name="tech-capital-amount" type="text">
+						</div>
+					</div>
+
+					<div class="govuk-form-group">
+						<div id="hint" class="govuk-hint">
+							Describe the technology capital expenditure (optional).
+						</div>
+						<textarea class="govuk-textarea" id="tech-capital-description" name="tech-capital-description" rows="5" aria-describedby="more-detail-hint"></textarea>
+					</div>
+
+
+					<!-- tech operational expenditure -->
+					<div class="govuk-form-group">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+								Technology operational expenditure (optional)
+							</h1>
+						</legend>
+						<div id="hint" class="govuk-hint">
+							Help text here
+						</div>
+						<div class="govuk-input__wrapper">
+							<div class="govuk-input__prefix" aria-hidden="true">£</div>
+							<input class="govuk-input govuk-input--width-10" id="tech-operational-amount" name="tech-operational-amount" type="text">
+						</div>
+					</div>
+
+					<div class="govuk-form-group">
+						<div id="hint" class="govuk-hint">
+							Describe the technology operational expenditure (optional).
+						</div>
+						<textarea class="govuk-textarea" id="tech-operational-description" name="tech-operational-description" rows="5" aria-describedby="more-detail-hint"></textarea>
+					</div>
+
+
+					<!-- nontech capital expenditure -->
+					<div class="govuk-form-group">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+								Non-technology operational expenditure (optional)
+							</h1>
+						</legend>
+						<div id="hint" class="govuk-hint">
+							Help text here
+						</div>
+						<div class="govuk-input__wrapper">
+							<div class="govuk-input__prefix" aria-hidden="true">£</div>
+							<input class="govuk-input govuk-input--width-10" id="nontech-operational-amount" name="nontech-operational-amount" type="text">
+						</div>
+					</div>
+
+					<div class="govuk-form-group">
+						<div id="hint" class="govuk-hint">
+							Describe the non-technology operational expenditure (optional).
+						</div>
+						<textarea class="govuk-textarea" id="nontech-operational-description" name="nontech-operational-description" rows="5" aria-describedby="more-detail-hint"></textarea>
+					</div>
+
+
+					<!-- exit costs -->
+					<div class="govuk-form-group">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+								Transition exit costs (optional)
+							</h1>
+						</legend>
+						<div id="hint" class="govuk-hint">
+							Help text here
+						</div>
+						<div class="govuk-input__wrapper">
+							<div class="govuk-input__prefix" aria-hidden="true">£</div>
+							<input class="govuk-input govuk-input--width-10" id="exit-costs-amount" name="exit-costs-amount" type="text">
+						</div>
+					</div>
+
+					<div class="govuk-form-group">
+						<div id="hint" class="govuk-hint">
+							Describe the transition exit costs (optional).
+						</div>
+						<textarea class="govuk-textarea" id="exit-costs-description" name="exit-costs-description" rows="5" aria-describedby="more-detail-hint"></textarea>
+					</div>
+
+
+					<!-- value requested -->
+					<div class="govuk-form-group">
+						<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+							<h1 class="govuk-fieldset__heading">
+								Value requested now (optional)
+							</h1>
+						</legend>
+						<div id="hint" class="govuk-hint">
+							Help text here
+						</div>
+						<div class="govuk-input__wrapper">
+							<div class="govuk-input__prefix" aria-hidden="true">£</div>
+							<input class="govuk-input govuk-input--width-10" id="value-requested-amount" name="value-requested-amount" type="text">
+						</div>
+					</div>
+
+					<div class="govuk-form-group">
+						<div id="hint" class="govuk-hint">
+							Describe the value requested now (optional).
+						</div>
+						<textarea class="govuk-textarea" id="value-requested-description" name="value-requested-description" rows="5" aria-describedby="more-detail-hint"></textarea>
+					</div>
+
+
+				</fieldset>
+			</div>
+
+			<div class="govuk-form-group" style="padding-top: 30px; margin-bottom: 10px;">
+				<button class="govuk-button" data-module="govuk-button">
+						Save and continue
+				</button>
+				<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+				        style="margin-left: 20px;">
+						Save and quit
+				</button>
+			</div>
+			<div class="govuk-form-group">
+			<p>
+					Save and quit will return you to the sections-to-complete list
+			</p>
+		</div>
+
+	</form>
+
+</div>
+</div>
+
+{% endblock %}

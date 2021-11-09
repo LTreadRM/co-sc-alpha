@@ -1,0 +1,245 @@
+
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% include "includes/topMenuDeptCases.html" %}
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+		<span class="govuk-caption-xl">John Doe</span>
+		<h1 class="govuk-heading-xl">
+			Department cases
+		</h1>
+	</div>
+
+	<div class="govuk-grid-column-full">
+		<div class="govuk-grid-row">
+
+			<!-- Number of cases -->
+			<div class="govuk-grid-column-one-half-from-desktop">
+				<h1 class="govuk-heading-m">
+					150 cases
+				</h1>
+			</div>
+
+			<!-- Add new button -->
+			<div class="govuk-grid-column-one-half-from-desktop">
+				<div class="govuk-form-group" style="float:right;">
+					<a href="0-1-add-new-case">
+						<button class="govuk-button" data-module="govuk-button" style="margin-bottom: 0px">
+							Add new
+						</button>
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="govuk-grid-row">
+
+			<!-- Search box and filters -->
+			<div class="govuk-grid-column-one-quarter-from-desktop">
+				<div class="govuk-form-group">
+					<input class="govuk-input" id="event-name" name="event-name" type="text">
+				</div>
+				<!-- filters go here -->
+				<div class="govuk-form-group">
+					<h2 class="govuk-heading-s">
+						Department
+					</h2>
+					<div class="govuk-form-group">
+						<fieldset class="govuk-fieldset">
+						<div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Ministry of Justice
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									BEIS
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Home Office
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Ministry of Defence
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									International Trade
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class="govuk-form-group">
+					<h2 class="govuk-heading-s">
+						Spend type
+					</h2>
+					<div class="govuk-form-group">
+						<fieldset class="govuk-fieldset">
+						<div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Advertising
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Commercial
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" 
+										type="checkbox" value="hmrc" checked>
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Digital and technology
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Consultancy
+								</label>
+							</div>
+							<div class="govuk-checkboxes__item">
+								<input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+								<label class="govuk-label govuk-checkboxes__label" for="organisation">
+									Property
+								</label>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Sort by dropdown and table content-->
+			<div class="govuk-grid-column-three-quarters-from-desktop" style="float: right;">
+				<div class="govuk-form-group" style="float:right;">
+					<p>
+						Sort by 
+						<select class="govuk-select" id="sort" name="sort">
+							<option value="relevance" selected>Relevance</option>
+							<option value="title">Title</option>
+							<option value="case-reference">Case reference</option>
+							<option value="value">Value</option>
+							<option value="spend-type">Spend type</option>
+							<option value="status">Status</option>
+						</select>
+					</p>
+				</div>
+				<!-- table goes here -->
+				<table class="govuk-table govuk-!-font-size-14">
+					<thead class="govuk-table__head">
+						<tr class="govuk-table__row">
+							<th scope="col" class="govuk-table__header"><!-- checkbox --></th>
+							<th scope="col" class="govuk-table__header">Title</th>
+							<th scope="col" class="govuk-table__header">Case reference</th>
+							<th scope="col" class="govuk-table__header">Type</th>
+							<th scope="col" class="govuk-table__header">Value</th>
+							<th scope="col" class="govuk-table__header">Status</th>
+						</tr>
+					</thead>
+					<tbody class="govuk-table__body">
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								<div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+									<div class="govuk-checkboxes__item" style="margin-top: -10px; margin-right: -40px;">
+										<input class="govuk-checkboxes__input" id="DigTech001" name="DigTech001" type="checkbox" value="DigTech001">
+										<label class="govuk-label govuk-checkboxes__label" for="DigTech001">
+											
+										</label>
+									</div>
+								</div>
+							</td>
+							<td class="govuk-table__cell">
+								<a href="getting-example-case">
+									Cloud migration project ABC
+								</a>
+							</td>
+							<td class="govuk-table__cell">DigTech001</td>
+							<td class="govuk-table__cell">Digital and Technology</td>
+							<td class="govuk-table__cell">£500K</td>
+							<td class="govuk-table__cell">Draft</td>
+						</tr>
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+													<div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+									<div class="govuk-checkboxes__item" style="margin-top: -10px; margin-right: -40px;">
+										<input class="govuk-checkboxes__input" id="DigTech001" name="DigTech001" type="checkbox" value="DigTech001">
+										<label class="govuk-label govuk-checkboxes__label" for="DigTech001">
+											
+										</label>
+									</div>
+								</div>
+							</td>
+							<td class="govuk-table__cell">
+								<a href="#">
+									End user devices
+								</a>
+							</td>
+							<td class="govuk-table__cell">DigTech002</td>
+							<td class="govuk-table__cell">Digital and Technology</td>
+							<td class="govuk-table__cell">£750K</td>
+							<td class="govuk-table__cell">Pending</td>
+						</tr>
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+													<div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+									<div class="govuk-checkboxes__item" style="margin-top: -10px; margin-right: -40px;">
+										<input class="govuk-checkboxes__input" id="DigTech001" name="DigTech001" type="checkbox" value="DigTech001">
+										<label class="govuk-label govuk-checkboxes__label" for="DigTech001">
+											
+										</label>
+									</div>
+								</div>
+							</td>
+							<td class="govuk-table__cell">
+								<a href="#">
+									Case management alpha
+								</a>
+							</td>
+							<td class="govuk-table__cell">DigTech009</td>
+							<td class="govuk-table__cell">Digital and Technology</td>
+							<td class="govuk-table__cell">£450K</td>
+							<td class="govuk-table__cell">Approved</td>
+						</tr>
+					</tbody>
+				</table>
+
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-full">
+	</div>
+
+
+
+
+{% endblock %}

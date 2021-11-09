@@ -1,0 +1,254 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="co-case-conditions-required" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<span class="govuk-caption-xl">
+			
+		</span>
+		<h1 class="govuk-heading-xl">
+			Apply conditions
+		</h1>
+	</div>
+</div>
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+
+		<div class="govuk-form-group">
+			<fieldset class="govuk-fieldset" aria-describedby="hint">
+				<div id="hint" class="govuk-hint">
+					Supporting text here
+				</div>
+				
+				<div class="govuk-form-group">
+
+					{% if data['conditions'].length === 0 or data['conditions'] == undefined %}
+
+					<div class="govuk-warning-text">
+						<span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+						<strong class="govuk-warning-text__text">
+							<span class="govuk-warning-text__assistive">Warning</span>
+							You haven't entered any conditions yet.
+						</strong>
+					</div>
+						
+					{% else %}
+
+					<!-- accordion -->
+					<div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+						{% for condition in data['conditions'] %}
+						<div class="govuk-accordion__section ">
+							<div class="govuk-accordion__section-header">
+								<h2 class="govuk-accordion__section-heading">
+									<span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+										<div class="govuk-grid-column-one-half" style="width: 200px;">
+											Condition {{ loop.index }}
+										</div>
+										 
+										<div class="govuk-grid-column-one-half" style="width: 200px;">
+										</div>
+									</span>
+								</h2>
+							</div>
+							<div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+								<!-- approved spend -->
+								<div class="govuk-form-group">
+									<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+										<h1 class="govuk-fieldset__heading">
+											Input condition
+										</h1>
+									</legend>
+									<div id="hint" class="govuk-hint">
+										<div class="govuk-form-group">
+											<select class="govuk-select" id="dd-control-area" name="dd-control-area" style="width: 320px;">
+												<option value="">Control area</option>
+												<option value="dt" selected>Digital and Technology</option>
+												<option value="co">Consulting</option>
+												<option value="fm">Facilities management</option>
+											</select>
+										</div>
+										<div class="govuk-form-group">
+											<select class="govuk-select" id="dd-category" name="dd-category" style="width: 320px;">
+												<option value=""/>
+												<option value="ge">General</option>
+												<option value="st" selected>Strategy</option>
+												<option value="de">Delivery</option>
+												<option value="ca">Capability</option>
+												<option value="co">Commercial</option>
+											</select>
+										</div>
+										<div class="govuk-form-group">
+											<select class="govuk-select" id="dd-condition" name="dd-condition" style="width: 320px;">
+												<option value=""/>
+												<option value="gs" selected>1. Discovery government strategy</option>
+												<option value="as">2. Consider GOV.UK alpha scan</option>
+											</select>
+										</div>
+									</div>
+								</div>
+
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="condition-name">
+										Name of condition
+									</label>
+									<input class="govuk-input" id="condition-name" name="condition-name" type="text" value="Discovery government strategy">
+									</input>
+								</div>
+								<div class="govuk-form-group">
+									<label class="govuk-label" for="condition-description">
+										Describe the condition
+									</label>
+									<textarea class="govuk-textarea" id="condition-description" name="condition-description" rows="5">Service team  must demonstrate that the delivery approach that comes out of discovery is in line with Government Shared Services Strategy and has been assured.
+									</textarea>
+								</div>
+								<div class="govuk-form-group">
+									<h2 class="govuk-heading-m">
+										Condition review date
+									</h2>
+									<div id="expected-end-date-hint" class="govuk-hint">
+										For example, 27 3 2024
+									</div>
+									<input class="govuk-input govuk-!-width-one-third" id="condition-review-date" name="condition-review-date" 
+											type="date" autocomplete="date" value="{{condition[5]}}">
+								</div>
+								<div class="govuk-form-group">
+									<p>
+										<a href="#">
+											Add another review date
+										</a>
+									</p>
+								</div>
+
+								<div class="govuk-form-group">
+									<h2 class="govuk-heading-m">
+										Do you want to receive notifications related to the condition review date?
+									</h2>
+									<div id="expected-end-date-hint" class="govuk-hint">
+										Notifications will appear on your conditions management dashboard
+									</div>
+									<div class="govuk-inset-text">
+										You will be automatically notified if the condition has received a response.
+									</div>
+								</div>
+
+								<div class="govuk-radios" data-module="govuk-radios">
+									<div class="govuk-radios__item">
+										<input class="govuk-radios__input" id="co-conditions-notifications" name="co-conditions-notifications" type="radio" 
+												value="yes" data-aria-controls="co-conditions-notifications-hidden"  {{ checked("co-conditions-notifications", "yes") }}>
+										<label class="govuk-label govuk-radios__label" for="co-conditions-notifications">
+											Yes
+										</label>
+									</div>
+									<!-- conditional, requesting optional comments -->
+									<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="co-conditions-notifications-hidden">
+										<div class="govuk-form-group">
+											<h2 class="govuk-heading-s">
+												At what time would you like to be notified?
+											</h2>
+											<div class="govuk-checkboxes govuk-checkboxes" data-module="govuk-checkboxes">
+												<div class="govuk-checkboxes__item">
+													<input class="govuk-checkboxes__input" id="notify-when" name="notify-when" type="checkbox" value="hmrc">
+													<label class="govuk-label govuk-checkboxes__label" for="notify-when">
+														On the day
+													</label>
+												</div>
+												<div class="govuk-checkboxes__item">
+													<input class="govuk-checkboxes__input" id="notify-when" name="notify-when" type="checkbox" value="hmrc">
+													<label class="govuk-label govuk-checkboxes__label" for="notify-when">
+														One day before
+													</label>
+												</div>
+												<div class="govuk-checkboxes__item">
+													<input class="govuk-checkboxes__input" id="notify-when" name="notify-when" type="checkbox" value="hmrc">
+													<label class="govuk-label govuk-checkboxes__label" for="notify-when">
+														A week before
+													</label>
+												</div>
+												<div class="govuk-checkboxes__item">
+													<input class="govuk-checkboxes__input" id="notify-when" name="notify-when" type="checkbox" value="hmrc">
+													<label class="govuk-label govuk-checkboxes__label" for="notify-when">
+														A month before
+													</label>
+												</div>
+												<div class="govuk-checkboxes__item">
+													<input class="govuk-checkboxes__input" id="notify-when" name="notify-when" type="checkbox" 
+															value="hmrc" data-aria-controls="conditional-date-hidden">
+													<label class="govuk-label govuk-checkboxes__label" for="notify-when">
+														Pick my own date
+													</label>
+												</div>
+												<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-date-hidden">
+													<div class="govuk-form-group">
+														<label class="govuk-label" for="conditional-date">
+															Notified date
+														</label>
+														<input class="govuk-input govuk-!-width-one-third" id="conditional-date" name="conditional-date" type="date" autocomplete="date">
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="govuk-radios__item">
+										<input class="govuk-radios__input" id="co-conditions-notifications" name="co-conditions-notifications" type="radio" 
+												value="no"{{ checked("co-conditions-notifications", "no") }}>
+										<label class="govuk-label govuk-radios__label" for="co-conditions-notifications">
+											No
+										</label>
+									</div>
+								</div>
+
+							</div>
+						</div>
+						{% endfor %}
+					</div>
+
+					{% endif %}
+
+					<a href="sending-add-new-condition">
+						{% if data['conditions'].length === 0 or data['conditions'] == undefined %}
+						<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+							Add a condition
+						</button>
+						{% else %}
+						<button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+							Add another condition
+						</button>
+						{% endif %}
+					</a>
+
+				</div>
+			</fieldset>
+		</div>
+
+		<div class="govuk-form-group" style="padding-top: 30px; margin-bottom: 10px;">
+			<button class="govuk-button" data-module="govuk-button">
+					Save and continue
+			</button>
+			<button class="govuk-button govuk-button--secondary" data-module="govuk-button"
+					style="margin-left: 20px;">
+					Save and quit
+			</button>
+		</div>
+		<div class="govuk-form-group" ">
+		<p>
+				Save and quit will return you to the sections-to-complete list
+		</p>
+	</div>
+
+</div>
+</div>
+
+{% endblock %}
