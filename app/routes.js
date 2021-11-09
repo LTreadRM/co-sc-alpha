@@ -250,4 +250,10 @@ router.get('/v0-1/sending-co-all-conditions', function(req, res) {
 	res.redirect('/v0-1/co-check-your-conditions')
 })
 
+router.get('/v0-1/sending-co-view-dept-responses', function(req, res) {
+	checkIfActive(req)
+	res.redirect('/v0-1/co-view-dept-responses')
+})
+
+
 
