@@ -1,0 +1,49 @@
+ {% extends "layout.html" %}
+
+{% block pageTitle %}
+  Cabinet Office Spend Controls
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-two-thirds">
+				<div class="govuk-panel govuk-panel--confirmation">
+					<h1 class="govuk-panel__title">
+						Case submitted
+					</h1>
+					<div class="govuk-panel__body">
+						The reference number						
+						<br />
+						<strong>
+							HDJ2123F
+						</strong>
+					</div>
+				</div>
+				<p class="govuk-body">
+					You have formally submitted this case for approval by the Cabinet Office.
+				</p>
+				<h2 class="govuk-heading-m">
+					What happens next
+				</h2>
+				<p class="govuk-body">
+					The Cabinet Office will be notified of this submission and your case will be reviewed within 28 days. 
+					The case may be approved or rejected, or approved with conditions. The Cabinet Office may contact 
+					you for further information. 
+				</p>
+				<p class="govuk-body">
+					<a href="#" class="govuk-link">
+						What did you think of this service?
+					</a>
+					(takes 30 seconds)
+				</p>
+			</div>
+		</div>
+	</main>
+</div>
+{% endblock %}

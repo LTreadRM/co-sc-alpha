@@ -255,5 +255,10 @@ router.get('/v0-1/sending-co-view-dept-responses', function(req, res) {
 	res.redirect('/v0-1/co-view-dept-responses')
 })
 
+router.get('/v0-1/sending-checked-answers', function(req, res) {
+	checkIfActive(req)
+	res.redirect('/v0-1/digital-tech-confirm-submission')
+})
+
 
 
