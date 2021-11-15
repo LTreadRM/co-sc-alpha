@@ -7,7 +7,7 @@ Intended users are the Cabinet Office and various government departments who sub
 
 The intended use of this prototype is for usability/summative testing with users from both of the above groups. 
 
-##How does it work?
+## How does it work?
 
 * Departmental users can enter details of a spend control. 
 * Even at draft level, Cabinet Office users have access to the case for intel and to offer any feedback in terms of combining projects across departments.
