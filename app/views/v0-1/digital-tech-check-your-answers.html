@@ -153,7 +153,7 @@
 							Project title
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['spend-title'] != '' and data['spend-title'] != defined %}
+							{% if data['spend-title'] != '' and data['spend-title'] != undefined %}
 								{{ data['spend-title'] }}
 							{% else %}
 								You need to provide a title for the spend.
@@ -171,7 +171,7 @@
 							Description of spend
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['spend-description'] != '' and data['spend-description'] != defined %}
+							{% if data['spend-description'] != '' and data['spend-description'] != undefined %}
 								{{ data['spend-description'] }}
 							{% else %}
 								You need to provide a description of the spend.
@@ -189,7 +189,7 @@
 							Area of spend
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['spend-type'] != '' and data['spend-type'] != defined %}
+							{% if data['spend-type'] != '' and data['spend-type'] != undefined %}
 								{{ data['spend-type'] }}
 							{% else %}
 								You need to provide a spent type.
@@ -207,10 +207,10 @@
 							Commercial assurance needed?
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['commercial-assurance'] != '' and data['commercial-assurance`'] != defined %}
-								{{ data['commercial-assurance'] }}
-							{% else %}
+							{% if data['commercial-assurance'] != '' and data['commercial-assurance`'] != undefined %}
 								You need to indicate if the spend is over £2 million.
+							{% else %}
+								{{ data['commercial-assurance'] }}
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -225,7 +225,7 @@
 							Expected end date
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['expected-end-date-day'] != '' and data['expected-end-date-day'] != defined %}
+							{% if data['expected-end-date-day'] != '' and data['expected-end-date-day'] != undefined %}
 								{{ data['expected-end-date-day'] }}.{{ data['expected-end-date-month'] }}.{{ data['expected-end-date-year'] }}
 							{% else %}
 								You need to provide an end date.
@@ -243,7 +243,7 @@
 							All approvals secured?
 						</dt>
 						<dd class="govuk-summary-list__value">
-							{% if data['received-necessary-approvals'] != '' and data['received-necessary-approvals'] != defined %}
+							{% if data['received-necessary-approvals'] != '' and data['received-necessary-approvals'] != undefined %}
 								{{ data['received-necessary-approvals'] }}
 							{% else %}
 								You need to indicate if all approvals have been secured.
