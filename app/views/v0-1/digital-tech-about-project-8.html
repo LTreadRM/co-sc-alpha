@@ -41,7 +41,7 @@
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="digital-tech-on-govuk" name="digital-tech-on-govuk" type="radio" 
-									value="yes" {{ checked("digital-tech-on-govuk", "yes") }}>
+									value="Yes" {{ checked("digital-tech-on-govuk", "Yes") }}>
 							<label class="govuk-label govuk-radios__label" for="digital-tech-on-govuk">
 								Yes
 							</label>
@@ -49,7 +49,7 @@
 
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="digital-tech-on-govuk" name="digital-tech-on-govuk" type="radio" 
-									value="no" data-aria-controls="digital-tech-on-govuk-url" {{ checked("digital-tech-on-govuk", "no") }}>
+									value="No" data-aria-controls="digital-tech-on-govuk-url" {{ checked("digital-tech-on-govuk", "No") }}>
 							<label class="govuk-label govuk-radios__label" for="digital-tech-on-govuk">
 								No
 							</label>
@@ -63,7 +63,9 @@
 								<span class="govuk-caption-m">
 									Help text goes here.
 								</span>
-								<input class="govuk-input" id="digital-tech-domain-name" name="digital-tech-domain-name" type="text">							</div>
+								<input class="govuk-input" id="digital-tech-domain-name" name="digital-tech-domain-name" type="text"
+								value="{{ data['digital-tech-domain-name'] }}">
+							</div>
 							<div class="govuk-form-group">
 								<h1 class="govuk-heading-s">
 									You must also provide an attachment of proof of exemption case
@@ -71,7 +73,8 @@
 								<span class="govuk-caption-m">
 									Help text goes here.
 								</span>
-								<input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" style="padding-top: 30px;">
+								<input class="govuk-file-upload" id="file-exemption-case" name="file-exemption-case" type="file" style="padding-top: 30px;"
+								value="{{ data['file-exemption-case'] }}">
 
 							</div>
 						</div>

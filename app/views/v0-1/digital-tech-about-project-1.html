@@ -43,7 +43,7 @@
 					<div class="govuk-radios" data-module="govuk-radios">
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="digital-tech-digital-or-tech" name="digital-tech-digital-or-tech" type="radio" 
-									value="digital" {{ checked("digital-tech-digital-or-tech", "digital") }}>
+									value="Digital" {{ checked("digital-tech-digital-or-tech", "Digital") }}>
 							<label class="govuk-label govuk-radios__label" for="digital-tech-digital-or-tech">
 								Digital
 							</label>
@@ -51,7 +51,7 @@
 
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="digital-tech-digital-or-tech" name="digital-tech-digital-or-tech" type="radio" 
-									value="tech" data-aria-controls="digital-tech-describe-tech" {{ checked("digital-tech-digital-or-tech", "tech") }}>
+									value="Technology" data-aria-controls="digital-tech-describe-tech" {{ checked("digital-tech-digital-or-tech", "Technology") }}>
 							<label class="govuk-label govuk-radios__label" for="digital-tech-digital-or-tech">
 								Technology
 							</label>
@@ -66,7 +66,7 @@
 									Be as specific as you can at this stage. Your Senior Technology Advisor can advise you on what information they would expect to see, based on the circumstances of your proposed spend.
 								</span>
 								<textarea class="govuk-textarea" id="digital-tech-describe-tech-detail" name="digital-tech-describe-tech-detail" 
-										rows="5"></textarea>
+										rows="5">{{ data['digital-tech-describe-tech-detail'] }}</textarea>
 							</div>
 							<div class="govuk-form-group">
 								<h1 class="govuk-heading-s">
@@ -76,7 +76,7 @@
 									You should include whether the technology is already in use in your Department, or can be reused elsewhere. 
 								</span>
 								<textarea class="govuk-textarea" id="digital-tech-describe-tech-value" name="digital-tech-describe-tech-value" 
-										rows="5"></textarea>
+										rows="5">{{ data['digital-tech-describe-tech-value'] }}</textarea>
 							</div>
 						</div>
 

@@ -43,7 +43,7 @@
 
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="digital-tech-procuring-externally" name="digital-tech-procuring-externally" type="radio" 
-									value="yes" data-aria-controls="digital-tech-procuring-externally-strategy" {{ checked("digital-tech-procuring-externally", "yes") }}>
+									value="Yes" data-aria-controls="digital-tech-procuring-externally-strategy" {{ checked("digital-tech-procuring-externally", "Yes") }}>
 							<label class="govuk-label govuk-radios__label" for="digital-tech-procuring-externally">
 								Yes
 							</label>
@@ -59,13 +59,13 @@
 								</span>
 								<textarea class="govuk-textarea" id="digital-tech-procuring-externally-strategy-description" 
 										name="digital-tech-procuring-externally-strategy-description" 
-										rows="5"></textarea>
+										rows="5">{{ data['digital-tech-procuring-externally-strategy-description'] }}</textarea>
 							</div>
 						</div>
 
 						<div class="govuk-radios__item">
 							<input class="govuk-radios__input" id="digital-tech-procuring-externally" name="digital-tech-procuring-externally" type="radio" 
-									value="no" {{ checked("digital-tech-procuring-externally-strategy", "no") }}>
+									value="No" {{ checked("digital-tech-procuring-externally-strategy", "No") }}>
 							<label class="govuk-label govuk-radios__label" for="digital-tech-procuring-externally">
 								No
 							</label>

@@ -39,7 +39,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-you">
 								Change
 								<span class="govuk-visually-hidden">full name</span>
 							</a>
@@ -57,7 +57,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-you">
 								Change
 								<span class="govuk-visually-hidden">department</span>
 							</a>
@@ -75,7 +75,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-you">
 								Change
 								<span class="govuk-visually-hidden">department</span>
 							</a>
@@ -93,7 +93,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-you">
 								Change
 								<span class="govuk-visually-hidden">telephone number</span>
 							</a>
@@ -111,7 +111,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-you">
 								Change
 								<span class="govuk-visually-hidden">email address</span>
 							</a>
@@ -129,10 +129,10 @@
 							Reference number
 						</dt>
 						<dd class="govuk-summary-list__value">
-							dt43954589dsj
+							2022-{{ data['department'] }}-0123
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-spend">
 								Change
 								<span class="govuk-visually-hidden">reference number</span>
 							</a>
@@ -160,7 +160,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-spend">
 								Change
 								<span class="govuk-visually-hidden">spend title</span>
 							</a>
@@ -178,7 +178,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-spend">
 										Change
 								<span class="govuk-visually-hidden">spend description</span>
 							</a>
@@ -196,7 +196,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-spend">
 								Change
 								<span class="govuk-visually-hidden">area of spend</span>
 							</a>
@@ -214,7 +214,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-spend">
 								Change
 								<span class="govuk-visually-hidden">Is commercial assurance needed</span>
 							</a>
@@ -232,7 +232,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-spend">
 								Change
 								<span class="govuk-visually-hidden">Expected end date</span>
 							</a>
@@ -250,7 +250,7 @@
 							{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="about-spend">
 								Change
 								<span class="govuk-visually-hidden">All approvals secured</span>
 							</a>
@@ -264,8 +264,8 @@
 				<h2 class="govuk-heading-m">Key contacts and spend details</h2>
 
 				<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+					{% if data['key_contacts'].length === 0 or data['key_contacts'] === undefined %}
 					<div class="govuk-summary-list__row">
-						{% if data['key_contacts'].length === 0 or data['key_contacts'] === undefined %}
 						<dt class="govuk-summary-list__key">
 							Key contacts
 						</dt>
@@ -273,31 +273,33 @@
 							You have not entered any key contacts
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="request-key-contacts">
 								Change
 								<span class="govuk-visually-hidden">Key contacts and spend details</span>
 							</a>
 						</dd>
-						{% else %}
-						{% for contact in data['key_contacts'] %}
+					</div>
+					{% else %}
+					{% for contact in data['key_contacts'] %}
+					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
 							Contact
 						</dt>
 						<dd class="govuk-summary-list__value">
-							contact[0] <br />
-							contact[1] <br />
-							contact[2] <br />
-							contact[3] <br />
+							Name: {{ contact[0] }}<br />
+							Role: {{ contact[1] }}<br />
+							Telephone: {{ contact[2] }}<br />
+							Email: {{ contact[3] }}<br />
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="request-key-contacts">
 								Change
 								<span class="govuk-visually-hidden">reference number</span>
 							</a>
 						</dd>
-						{% endfor %}
-						{% endif %}
 					</div>
+					{% endfor %}
+					{% endif %}
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -311,7 +313,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="spend-details-approvals-1">
 								Change
 								<span class="govuk-visually-hidden">Delivery stage</span>
 							</a>
@@ -330,7 +332,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="spend-details-approvals-2">
 								Change
 								<span class="govuk-visually-hidden">IPA review needed</span>
 							</a>
@@ -349,7 +351,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="spend-details-approvals-3">
 								Change
 								<span class="govuk-visually-hidden">Treasury approval needed</span>
 							</a>
@@ -368,33 +370,38 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="spend-details-approvals-4">
 								Change
 								<span class="govuk-visually-hidden">Service assessment needed</span>
 							</a>
 						</dd>
 					</div>
 
+					{% if data['critical_events'].length === 0 or data['critical_events'] === undefined %}
 					<div class="govuk-summary-list__row">
-						<dt class="govuk-summary-list__key">
-							Critical dates
-						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['critical_events'].length === 0 or data['critical_events'] === undefined %}
-							You have not entered any dates
-						{% else %}
-							{% for event in data['key_contacts'] %}
-								{{ event[0] }}: {{ event[1] }}
-							{% endfor %}
-						{% endif %}
-						</dd>
-						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
-								Change
-								<span class="govuk-visually-hidden">Critical dates</span>
-							</a>
+							You have not entered any events
 						</dd>
 					</div>
+					{% else %}
+						{% for event in data['critical_events'] %}
+						<div class="govuk-summary-list__row">
+							<dt class="govuk-summary-list__key">
+								Critical event
+							</dt>
+							<dd class="govuk-summary-list__value">
+								{{ event[0] }}<br />
+								{{ event[1] }}<br />
+							</dd>
+							<dd class="govuk-summary-list__actions">
+								<a class="govuk-link" href="spend-details-approvals-5a">
+									Change
+									<span class="govuk-visually-hidden">reference number</span>
+								</a>
+							</dd>
+						</div>
+						{% endfor %}
+					{% endif %}
 
 				</dl>
 
@@ -415,12 +422,47 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-1">
 								Change
 								<span class="govuk-visually-hidden">Digital or technology?</span>
 							</a>
 						</dd>
 					</div>
+					
+					<!-- Optional field - shown only if "technology" is selected -->
+					{% if data['digital-tech-digital-or-tech'] === "Technology" %}
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Describe the technology you are requesting money for
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['digital-tech-describe-tech-detail'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="digital-tech-about-project-1">
+								Change
+								<span class="govuk-visually-hidden">Digital or technology?</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							How will the proposed technology provide value for money?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['digital-tech-describe-tech-value'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="digital-tech-about-project-1">
+								Change
+								<span class="govuk-visually-hidden">Digital or technology?</span>
+							</a>
+						</dd>
+					</div>
+					{% endif %}
+					<!-- end of this optional -->
+
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -434,7 +476,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-2">
 								Change
 								<span class="govuk-visually-hidden">Is this a response to a ministerial or legal requirement?</span>
 							</a>
@@ -446,14 +488,14 @@
 							What problem is this project trying to solve?
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['digital-tech-about-3-textarea'] === undefined %}
+						{% if data['digital-tech-about-3-problem-solved'] === undefined %}
 							You have not answered this
 						{% else %}
-							{{ data['digital-tech-about-3-textarea'] }}
+							{{ data['digital-tech-about-3-problem-solved'] }}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-3">
 								Change
 								<span class="govuk-visually-hidden">What problem is this project trying to solve?</span>
 							</a>
@@ -472,7 +514,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-4">
 								Change
 								<span class="govuk-visually-hidden">How many users are affected by or would use your solution?</span>
 							</a>
@@ -491,7 +533,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-5">
 								Change
 								<span class="govuk-visually-hidden">Description of proposed solution</span>
 							</a>
@@ -510,12 +552,31 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-6">
 								Change
 								<span class="govuk-visually-hidden">Will you be procuring externally at all?</span>
 							</a>
 						</dd>
 					</div>
+
+					<!-- Optional field - shown only if "Yes" is selected -->
+					{% if data['digital-tech-procuring-externally'] === "Yes" %}
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							Describe the requirement for procuring externally
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{{ data['digital-tech-procuring-externally-strategy-description'] }}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="digital-tech-about-project-6">
+								Change
+								<span class="govuk-visually-hidden">Digital or technology?</span>
+							</a>
+						</dd>
+					</div>
+					{% endif %}
+					<!-- end of this optional -->
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -529,7 +590,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-7">
 								Change
 								<span class="govuk-visually-hidden">Do users need to authenticate?</span>
 							</a>
@@ -552,12 +613,55 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-8">
 								Change
 								<span class="govuk-visually-hidden">Is the service domain on GOV.UK?</span>
 							</a>
 						</dd>
 					</div>
+
+					<!-- Optional field - shown only if "Yes" is selected -->
+					{% if data['digital-tech-procuring-externally'] === "Yes" %}
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							What is your service's domain name (URL)?
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['file-exemption-case'] != undefined or data['file-exemption-case'] != '' %}
+								{{ data['digital-tech-domain-name'] }}
+							{% else %}
+								You have not provided a URL
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="digital-tech-about-project-8">
+								Change
+								<span class="govuk-visually-hidden">Service domain name</span>
+							</a>
+						</dd>
+					</div>
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							File with proof of exemption case
+						</dt>
+						<dd class="govuk-summary-list__value">
+							{% if data['file-exemption-case'] != undefined and data['file-exemption-case'] != '' %}
+								{{ data['file-exemption-case'] }}
+							{% else %}
+								You have not provided a file
+							{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="digital-tech-about-project-8">
+								Change
+								<span class="govuk-visually-hidden">File with exemption case</span>
+							</a>
+						</dd>
+					</div>
+					{% endif %}
+					<!-- end of this optional -->
+
+
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
@@ -571,7 +675,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-9">
 								Change
 								<span class="govuk-visually-hidden">What technology are you requesting money for?</span>
 							</a>
@@ -590,7 +694,7 @@
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
-							<a class="govuk-link" href="#">
+							<a class="govuk-link" href="digital-tech-about-project-10">
 								Change
 								<span class="govuk-visually-hidden">How does the proposed technology provide value for money?</span>
 							</a>
