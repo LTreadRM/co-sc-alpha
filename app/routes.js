@@ -155,6 +155,7 @@ router.get('/v0-1/sending-digital-tech-cost-breakdown-1', function(req, res) {
 	checkIfActive(req)
 	/* grab page variables into a single variable */
 	var blob = []
+	blob.push("Year")
 	blob.push(req.session.data['cost-year'])
 	blob.push(req.session.data['approved-spend-amount'])
 	blob.push(req.session.data['approved-spend-description'])
@@ -168,10 +169,12 @@ router.get('/v0-1/sending-digital-tech-cost-breakdown-1', function(req, res) {
 	blob.push(req.session.data['exit-costs-description'])
 	blob.push(req.session.data['value-requested-amount'])
 	blob.push(req.session.data['value-requested-description'])
-	var total = parseFloat(req.session.data['approved-spend-amount']) + parseFloat(req.session.data['tech-capital-amount'])
+	/* var total = parseFloat(req.session.data['approved-spend-amount']) + parseFloat(req.session.data['tech-capital-amount'])
 			+ parseFloat(req.session.data['tech-operational-amount']) + parseFloat(req.session.data['nontech-operational-amount']) + 
-			parseFloat(req.session.data['exit-costs-amount']) + parseFloat(req.session.data['value-requested-amount'])
-	blob.push(total)
+			parseFloat(req.session.data['exit-costs-amount']) + parseFloat(req.session.data['value-requested-amount']) 
+	blob.push(total) */
+	console.log(req.session.data['costs'])
+	console.log(blob)
 	/* add variables to appropriate initialised variable */
 	req.session.data['costs'].push(blob)
 	req.session.save()
