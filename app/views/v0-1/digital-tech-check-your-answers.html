@@ -970,7 +970,7 @@
 
 					<div class="govuk-summary-list__row">
 						<dt class="govuk-summary-list__key">
-							12. Meet the Service Standard
+							12. Make your technology sustainable
 						</dt>
 						<dd class="govuk-summary-list__value">
 						{% if data['tech-cop-point-12'] === undefined or data['tech-cop-point-12'] === "" %}
@@ -982,11 +982,31 @@
 						<dd class="govuk-summary-list__actions">
 							<a class="govuk-link" href="digital-tech-code-practice#tcop-12">
 								Change
-								<span class="govuk-visually-hidden">12. Meet the Service Standard</span>
+								<span class="govuk-visually-hidden">12. Make your technology sustainable</span>
+							</a>
+						</dd>
+					</div>
+
+					<div class="govuk-summary-list__row">
+						<dt class="govuk-summary-list__key">
+							13. Meet the Service Standard
+						</dt>
+						<dd class="govuk-summary-list__value">
+						{% if data['tech-cop-point-13'] === undefined or data['tech-cop-point-13'] === "" %}
+							You have not answered this
+						{% else %}
+							{{ data['tech-cop-point-13'] }}
+						{% endif %}
+						</dd>
+						<dd class="govuk-summary-list__actions">
+							<a class="govuk-link" href="digital-tech-code-practice#tcop-13">
+								Change
+								<span class="govuk-visually-hidden">13. Meet the Service Standard</span>
 							</a>
 						</dd>
 					</div>
 				</dl>
+			</dl>
 
 
 			</div>
