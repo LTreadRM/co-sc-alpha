@@ -60,7 +60,30 @@ router.get('/v0-1/0-1-about-you', function(req, res) {
 })
 
 router.get('/v0-1/sending-about_you', function(req, res) {
-	res.redirect('/v0-1/about-spend')
+	// Now, with error checking!
+	req.session.data['error'] = []
+	// Indicate the type of error
+	if (req.session.data['full-name'] === "") {
+		// No name given
+		req.session.data['error'].push('name')
+	}
+	if (req.session.data['role'] === "") {
+		// No role given
+		req.session.data['error'].push('role')
+	}
+	if (req.session.data['phone-number'] === "") {
+		// No telephone number given
+		req.session.data['error'].push('phone')
+	}
+	if (req.session.data['email'] === "") {
+		// No email given
+		req.session.data['error'].push('email')
+	}
+	if (req.session.data['error'].length > 0) {
+		res.redirect('/v0-1/about-you')
+	} else {
+		res.redirect('/v0-1/about-spend')
+	}
 })
 
 router.get('/v0-1/sending-about-spend', function(req, res) {

@@ -14,7 +14,41 @@
 <!-- main -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+		
+		<!-- Error goes here -->
+		{% if data['error'].length > 0 %} 
+		<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+			<h2 class="govuk-error-summary__title" id="error-summary-title">
+				There is a problem
+			</h2>
+			<div class="govuk-error-summary__body">
+				<ul class="govuk-list govuk-error-summary__list">
+					{% if 'name' in data['error'] %}
+					<li>
+						<a href="#core-full-name">Provide the full name of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'role' in data['error'] %}
+					<li>
+						<a href="#core-role">Provide the role of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'phone' in data['error'] %}
+					<li>
+						<a href="#core-phone-number">Provide the phone number of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'email' in data['error'] %}
+					<li>
+						<a href="#core-email">Provide the email address of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+		<!-- Error finishes -->
+		{% endif %}
+		
 		<h1 class="govuk-heading-xl">
 			About you
 		</h1>
@@ -39,40 +73,104 @@
 					Department
 				</label>
 				<select class="govuk-select" id="department" name="department">
-					<option value="MOJ">Ministry of Justice</option>
 					<option value="BEIS">BEIS</option>
-					<option value="MOD">Ministry of Defence</option>
+					<option value="Cabinet Office">Cabinet Office</option>
+					<option value="DLUHC">Department for Levelling Up, Housing and Communities</option>
+					<option value="Department for Transport">Department for Transport</option>
+					<option value="DWP">Department for Work and Pensions</option>
+					<option value="HMRC">HMRC</option>
+					<option value="MOJ">Ministry of Justice</option>
 					<option value="NHSX">NHS-X</option>
 				</select>
 			</div>
 
+			{% if 'name' not in data['error'] %}
 			<div class="govuk-form-group">
-				<label class="govuk-label" for="full-name">
-					Full name
-				</label>
-				<input class="govuk-input" id="full-name" name="full-name" type="text" value="{{ data['full-name'] }}">
-			</div>
+					<a id="core-full-name"></a>
+					<label class="govuk-label" for="full-name">
+						Full name
+					</label>
+					<input class="govuk-input" id="full-name" name="full-name" type="text" value="{{ data['full-name'] }}">
+				</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="no-name-given-hint no-name-given-error">
+					<a id="core-full-name"></a>
+					<label class="govuk-label" for="full-name">
+						Full name
+					</label>
+					<p id="no-name-given-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> Provide the full name of the person in charge of this spend control
+					</p>
+					<input class="govuk-input govuk-input--error" id="full-name" name="full-name" type="text" value="{{ data['full-name'] }}">
+				</div>
+			{% endif %}
 
+			{% if 'role' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-role"></a>
 				<label class="govuk-label" for="role">
 					Role
 				</label>
 				<input class="govuk-input" id="role" name="role" type="text" value="{{ data['role'] }}">
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="no-role-given-hint no-role-given-error">
+				<a id="core-role"></a>
+				<label class="govuk-label" for="role">
+					Role
+				</label>
+				<p id="no-role-given-error" class="govuk-error-message">
+					<span class="govuk-visually-hidden">Error:</span> Provide the role of the person in charge of this spend control
+				</p>
+				<input class="govuk-input govuk-input--error" id="role" name="role" type="text" value="{{ data['role'] }}">
+				</div>
+			{% endif %}
 
+			{% if 'phone' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-phone-number"></a>
 				<label class="govuk-label" for="phone-number">
 					Phone number
 				</label>
-				<input class="govuk-input" id="phone-number" name="phone-number" type="text" value="{{ data['phone-number'] }}">
+				<input class="govuk-input" id="phone-number" name="phone-number" type="tel" value="{{ data['phone-number'] }}">
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="no-phone-given-hint no-phone-given-error">
+				<a id="core-phone-number"></a>
+				<label class="govuk-label" for="phone-number">
+					Phone number
+				</label>
+				<p id="no-phone-given-error" class="govuk-error-message">
+					<span class="govuk-visually-hidden">Error:</span> Provide the telephone number of the person in charge of this spend control
+				</p>
+				<input class="govuk-input govuk-input--error" id="phone-number" name="phone-number" type="tel" value="{{ data['phone-number'] }}">
+			</div>
+			{% endif %}
 
+			{% if 'email' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-email"></a>
 				<label class="govuk-label" for="email">
 					Email address
 				</label>
 				<input class="govuk-input" id="email" name="email" type="text" value="{{ data['email'] }}">
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="no-email-given-hint no-email-given-error">
+				<a id="core-email"></a>
+				<label class="govuk-label" for="email">
+					Email address
+				</label>
+				<p id="no-email-given-error" class="govuk-error-message">
+					<span class="govuk-visually-hidden">Error:</span> Provide the telephone number of the person in charge of this spend control
+				</p>
+				<input class="govuk-input govuk-input--error" id="email" name="email" type="text" value="{{ data['email'] }}">
+			</div>
+			{% endif %}
 
 			<div class="govuk-form-group" style="padding-top: 30px;">
 				<button class="govuk-button" data-module="govuk-button">
