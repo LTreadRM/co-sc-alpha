@@ -50,10 +50,18 @@
 		<!-- Error finishes -->
 		
 		<span class="govuk-caption-xl">
-			Department name
+			{% if data['department'] === undefined %}
+			MOJ
+			{% else %}
+			{{ data['department'] }}
+			{% endif %}
 		</span>
 		<h1 class="govuk-heading-xl">
-			Project name
+			{% if data['spend-title'] != '' and data['spend-title'] != undefined %}
+				{{ data['spend-title'] }}
+			{% else %}
+				Project title
+			{% endif %}
 		</h1>
 	</div>
 </div>

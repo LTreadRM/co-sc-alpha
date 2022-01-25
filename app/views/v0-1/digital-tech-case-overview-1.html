@@ -1,0 +1,395 @@
+ {% extends "layout.html" %}
+
+{% block pageTitle %}
+	Spend controls: Case overview
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/phase-banner.html" %}
+<a href="add-new-case" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<!-- main -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		
+		<!-- Error goes here -->
+		{% if data['error'].length > 0 %} 
+		<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+			<h2 class="govuk-error-summary__title" id="error-summary-title">
+				There is a problem
+			</h2>
+			<div class="govuk-error-summary__body">
+				<ul class="govuk-list govuk-error-summary__list">
+					{% if 'name' in data['error'] %}
+					<li>
+						<a href="#core-full-name">Provide the full name of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'role' in data['error'] %}
+					<li>
+						<a href="#core-role">Provide the role of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'phone' in data['error'] %}
+					<li>
+						<a href="#core-phone-number">Provide the phone number of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'email' in data['error'] %}
+					<li>
+						<a href="#core-email">Provide the email address of the person in charge of this spend control</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+		{% endif %}
+		<!-- Error finishes -->
+		
+		<span class="govuk-caption-xl">
+			{% if data['department'] === undefined %}
+			MOJ
+			{% else %}
+			{{ data['department'] }}
+			{% endif %}
+		</span>
+		<h1 class="govuk-heading-xl">
+			{% if data['spend-title'] != '' and data['spend-title'] != undefined %}
+				{{ data['spend-title'] }}
+			{% else %}
+				Project title
+			{% endif %}
+		</h1>
+	</div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		<div class="govuk-form-group">
+
+			<h2 class="govuk-heading-s">
+				Status
+				<strong class="govuk-tag">
+					In progress
+				</strong>
+			</h2>
+
+			<p>
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+			</p>
+
+			<p class="govuk-body-s">
+				Contents
+			</p>
+			
+			<ul class="govuk-list govuk-list--bullet">
+				<li>
+					Overview
+				</li>
+				<li>
+					<a href="#">
+						Conditions
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Notes
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Linked cases
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Key contacts
+					</a>
+				</li>
+				<li>
+					<a href="#">
+						Triage
+					</a>
+				</li>
+			</ul>
+		</div>
+
+		<h2 class="govuk-heading-l">
+			Overview
+		</h2>
+
+		<!-- PROJECT INFORMATION -->
+		<div class="govuk-form-group">
+			<h2 class="govuk-heading-m">
+				Project information
+			</h2>
+
+			<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key govuk-!-width-two-thirds">
+						Case reference number
+					</dt>
+					<dd class="govuk-summary-list__value">
+						{% if data['department'] === undefined %}
+						2022-MOJ-01234
+						{% else %}
+						2022-{{ data['department'] }}-01234
+						{% endif %}
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Spend type
+					</dt>
+					<dd class="govuk-summary-list__value">
+						{% if data['digital-tech-digital-or-tech'] === undefined %}
+						Technology
+						{% else %}
+						data['digital-tech-digital-or-tech']
+						{% endif %}
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Spend amount
+					</dt>
+					<dd class="govuk-summary-list__value">
+						£1,000,000
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Case lead
+					</dt>
+					<dd class="govuk-summary-list__value">
+						Ty Fisher
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Assurance due date
+					</dt>
+					<dd class="govuk-summary-list__value">
+						28 February 2022
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Assurance decision
+					</dt>
+					<dd class="govuk-summary-list__value">
+						Not yet assured
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Approved by
+					</dt>
+					<dd class="govuk-summary-list__value">
+						Not yet approved
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Complexity
+					</dt>
+					<dd class="govuk-summary-list__value">
+						Assure/Monitor/Control
+					</dd>
+				</div>
+				<div class="govuk-summary-list__row">
+					<dt class="govuk-summary-list__key">
+						Conditions applied
+					</dt>
+					<dd class="govuk-summary-list__value">
+						<a href="#">
+							3
+						</a>
+					</dd>
+				</div>
+			</dl>
+		</div>
+
+		<!-- DOCUMENTS -->
+		<div class="govuk-form-group">
+			<table class="govuk-table">
+				<caption class="govuk-table__caption govuk-table__caption--m">Documents</caption>
+				<thead class="govuk-table__head">
+					<tr class="govuk-table__row">
+						<th scope="col" class="govuk-table__header">
+							Type
+						</th>
+						<th scope="col" class="govuk-table__header">
+							Added by
+						</th>
+						<th scope="col" class="govuk-table__header">
+							Date added
+						</th>
+					</tr>
+				</thead>
+				<tbody class="govuk-table__body">
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">
+							<a href="#">
+								Pipeline submission
+							</a>
+						</td>
+						<td class="govuk-table__cell">
+							Name
+						</td>
+						<td class="govuk-table__cell">
+							10 / 10 / 2021
+						</td>
+					</tr>
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">
+							<a href="#">
+								Supporting document 1
+							</a>
+						</td>
+						<td class="govuk-table__cell">
+							Name
+						</td>
+						<td class="govuk-table__cell">
+							12 / 10 / 2021
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- LINKED CASES -->
+		<div class="govuk-form-group">
+			<table class="govuk-table">
+				<caption class="govuk-table__caption govuk-table__caption--m">Linked cases (2)</caption>
+				<thead class="govuk-table__head">
+					<tr class="govuk-table__row">
+						<th scope="col" class="govuk-table__header">
+							Case number
+						</th>
+						<th scope="col" class="govuk-table__header">
+							Case name
+						</th>
+						<th scope="col" class="govuk-table__header">
+							Date added
+						</th>
+					</tr>
+				</thead>
+				<tbody class="govuk-table__body">
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">
+							<a href="#">
+								{% if data['department'] === undefined %}
+								2022-MOJ-43210
+								{% else %}
+								2022-{{ data['department'] }}-43210
+								{% endif %}
+							</a>
+						</td>
+						<td class="govuk-table__cell">
+							Spend Controls Platform Discovery
+						</td>
+						<td class="govuk-table__cell">
+							8 / 10/ 2021
+						</td>
+					</tr>
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">
+							<a href="#">
+								{% if data['department'] === undefined %}
+								2022-MOJ-43219
+								{% else %}
+								2022-{{ data['department'] }}-43219
+								{% endif %}
+							</a>
+						</td>
+						<td class="govuk-table__cell">
+							Spend Controls Platform Alpha
+						</td>
+						<td class="govuk-table__cell">
+							11 / 10 / 2021
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- KEY CONTACTS -->
+		<div class="govuk-form-group">
+			<table class="govuk-table">
+				<caption class="govuk-table__caption govuk-table__caption--m">
+					{% if data['key_contacts'] === undefined or data['key_contacts'].length === 0 %}
+					Key contacts (3)
+					{% else %}
+					Key contacts ({{ data['key_contacts'].length}})
+					{% endif %}
+					</caption>
+				<thead class="govuk-table__head">
+					<tr class="govuk-table__row">
+						<th scope="col" class="govuk-table__header">
+							Name
+						</th>
+						<th scope="col" class="govuk-table__header">
+							Role
+						</th>
+						<th scope="col" class="govuk-table__header">
+							Contact information
+						</th>
+					</tr>
+				</thead>
+				<tbody class="govuk-table__body">
+					{% if data['key_contacts'] === undefined or data['key_contacts'].length === 0 %}
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">
+							Joe Bloggs
+						</td>
+						<td class="govuk-table__cell">
+							Head of Digital
+						</td>
+						<td class="govuk-table__cell">
+							<a href="#">
+								joe.blogs@moj.gov.uk
+							</a>
+						</td>
+					</tr>
+					<tr class="govuk-table__row">
+						<td class="govuk-table__cell">
+							Jane Doe
+						</td>
+						<td class="govuk-table__cell">
+							Programme Manager
+						</td>
+						<td class="govuk-table__cell">
+							<a href="#">
+								jane.doe@moj.gov.uk
+							</a>
+						</td>
+					</tr>
+					{% else %}
+						{% for contact in data['key_contacts'] %}
+						<tr class="govuk-table__row">
+							<td class="govuk-table__cell">
+								{{ contact[0] }}
+							</td>
+							<td class="govuk-table__cell">
+								{{ contact[1] }}
+							</td>
+							<td class="govuk-table__cell">
+								<a href="#">
+									{{ contact[3] }}
+								</a>
+							</td>
+						</tr>
+						{% endfor %}
+					{% endif %}
+				</tbody>
+			</table>
+		</div>
+
+	</div>
+</div>
+
+{% endblock %}
