@@ -123,71 +123,71 @@
 			{% if 'type' not in data['error'] %}
 			<div class="govuk-form-group">
 				<a id="core-type"></a>
-				<fieldset class="govuk-fieldset">
+				<fieldset class="govuk-fieldset" aria-describedby="spend-type">
 					<h2 class="govuk-heading-m">
 						What area of spend are you applying in?
 					</h2>
 
-					<div class="govuk-radios">
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="advertising" {{ checked("spend-type", "advertising") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Advertising" {{ checked("spend-type", "Advertising") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Advertising
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="commercial" {{ checked("spend-type", "commercial") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Commercial" {{ checked("spend-type", "Commercial") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Commercial
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="digital-and-technology" {{ checked("spend-type", "digital-and-technology") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Digital and technology" {{ checked("spend-type", "Digital and technology") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Digital and technology
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="consultancy" {{ checked("spend-type", "consultancy") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Consultancy" {{ checked("spend-type", "Consultancy") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Consultancy
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="property" {{ checked("spend-type", "property") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Property" {{ checked("spend-type", "Property") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Property
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="facilities" {{ checked("spend-type", "facilities") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Facilities" {{ checked("spend-type", "Facilities") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Facilities
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="redundancy" {{ checked("spend-type", "redundancy") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Redundancy" {{ checked("spend-type", "Redundancy") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Redundancy
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="recruitment" {{ checked("spend-type", "recruitment") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Recruitment" {{ checked("spend-type", "Recruitment") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Recruitment
 							</label>
 						</div>
 
-						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="spend-type" name="spend-type" type="radio" value="learning-and-development" {{ checked("spend-type", "learning-and-development") }}>
-							<label class="govuk-label govuk-radios__label" for="spend-type">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Learning and development" {{ checked("spend-type", "Learning and development") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
 								Learning and development
 							</label>
 						</div>
