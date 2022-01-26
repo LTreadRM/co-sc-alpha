@@ -115,7 +115,7 @@
 					<p id="no-description-given-error" class="govuk-error-message">
 						<span class="govuk-visually-hidden">Error:</span> Provide a description of this spend control
 					</p>
-					<input class="govuk-input govuk-input--error" id="spend-description" name="spend-description" type="text" value="{{ data['spend-description'] }}">
+					<textarea class="govuk-textarea" id="spend-description" name="spend-description" rows="5" aria-describedby="spend-description-hint">{{ data['spend-description'] }}</textarea>
 				</div>
 			{% endif %}
 
