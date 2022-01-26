@@ -768,10 +768,14 @@
 							1. Define user needs
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-1'] === undefined or data['tech-cop-point-1'] === "" %}
-							You have not answered this
+						{% if data['tcop-1'] != 'tcop-1' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-1'] }}
+							{% if data['tech-cop-point-1'] === undefined or data['tech-cop-point-1'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-1'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -787,10 +791,14 @@
 							2. Make things accessible and inclusive
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-2'] === undefined or data['tech-cop-point-2'] === "" %}
-							You have not answered this
+						{% if data['tcop-2'] != 'tcop-2' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-2'] }}
+							{% if data['tech-cop-point-2'] === undefined or data['tech-cop-point-2'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-2'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -805,10 +813,14 @@
 							3. Be open and use open source
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-3'] === undefined or data['tech-cop-point-3'] === "" %}
-							You have not answered this
+						{% if data['tcop-3'] != 'tcop-3' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-3'] }}
+							{% if data['tech-cop-point-3'] === undefined or data['tech-cop-point-3'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-3'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -823,10 +835,14 @@
 							4. Make use of open standards
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-4'] === undefined or data['tech-cop-point-4'] === "" %}
-							You have not answered this
+						{% if data['tcop-4'] != 'tcop-4' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-4'] }}
+							{% if data['tech-cop-point-4'] === undefined or data['tech-cop-point-4'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-4'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -842,10 +858,14 @@
 							5. Use cloud first
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-5'] === undefined or data['tech-cop-point-5'] === "" %}
-							You have not answered this
+						{% if data['tcop-5'] != 'tcop-5' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-5'] }}
+							{% if data['tech-cop-point-5'] === undefined or data['tech-cop-point-5'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-5'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -861,10 +881,14 @@
 							6. Make things secure
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-6'] === undefined or data['tech-cop-point-6'] === "" %}
-							You have not answered this
+						{% if data['tcop-6'] != 'tcop-6' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-6'] }}
+							{% if data['tech-cop-point-6'] === undefined or data['tech-cop-point-6'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-6'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -880,10 +904,14 @@
 							7. Make privacy integral
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-7'] === undefined or data['tech-cop-point-7'] === "" %}
-							You have not answered this
+						{% if data['tcop-7'] != 'tcop-7' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-7'] }}
+							{% if data['tech-cop-point-7'] === undefined or data['tech-cop-point-7'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-7'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -899,10 +927,14 @@
 							8. Share, reuse and collaborate
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-8'] === undefined or data['tech-cop-point-8'] === "" %}
-							You have not answered this
+						{% if data['tcop-8'] != 'tcop-8' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-8'] }}
+							{% if data['tech-cop-point-8'] === undefined or data['tech-cop-point-8'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-8'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -918,10 +950,14 @@
 							9. Integrate and adapt technology
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-9'] === undefined or data['tech-cop-point-9'] === "" %}
-							You have not answered this
+						{% if data['tcop-9'] != 'tcop-9' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-9'] }}
+							{% if data['tech-cop-point-9'] === undefined or data['tech-cop-point-9'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-9'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -937,10 +973,14 @@
 							10. Make better use of data
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-10'] === undefined or data['tech-cop-point-10'] === "" %}
-							You have not answered this
+						{% if data['tcop-10'] != 'tcop-10' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-10'] }}
+							{% if data['tech-cop-point-10'] === undefined or data['tech-cop-point-10'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-10'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -956,10 +996,14 @@
 							11. Define your purchasing strategy
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-11'] === undefined or data['tech-cop-point-11'] === "" %}
-							You have not answered this
+						{% if data['tcop-11'] != 'tcop-11' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-11'] }}
+							{% if data['tech-cop-point-11'] === undefined or data['tech-cop-point-11'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-11'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -975,10 +1019,14 @@
 							12. Make your technology sustainable
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-12'] === undefined or data['tech-cop-point-12'] === "" %}
-							You have not answered this
+						{% if data['tcop-12'] != 'tcop-12' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-12'] }}
+							{% if data['tech-cop-point-12'] === undefined or data['tech-cop-point-12'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-12'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
@@ -994,10 +1042,14 @@
 							13. Meet the Service Standard
 						</dt>
 						<dd class="govuk-summary-list__value">
-						{% if data['tech-cop-point-13'] === undefined or data['tech-cop-point-13'] === "" %}
-							You have not answered this
+						{% if data['tcop-13'] != 'tcop-13' %}
+							You have not selected this
 						{% else %}
-							{{ data['tech-cop-point-13'] }}
+							{% if data['tech-cop-point-13'] === undefined or data['tech-cop-point-13'] === "" %}
+								You have selected but not answered this
+							{% else %}
+								{{ data['tech-cop-point-13'] }}
+							{% endif %}
 						{% endif %}
 						</dd>
 						<dd class="govuk-summary-list__actions">
