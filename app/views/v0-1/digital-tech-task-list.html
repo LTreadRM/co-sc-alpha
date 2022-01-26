@@ -21,61 +21,86 @@
 		</p>
 
           <ul class="app-task-list__items" style="padding: 0px;">
+		  <!-- 1. KEY CONTACTS -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="request-key-contacts" aria-describedby="eligibility-status" class="govuk-link--no-visited-state">
                   Key contacts
                 </a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Not started</strong>
+			  {% if data['contacts'].length === 0 and data['contacts'] === undefined %}
+              <strong class="govuk-tag govuk-tag--blue">Not started</strong>
+			  {% else %}
+			  <strong class="govuk-tag app-task-list__tag  govuk-tag--yellow" id="eligibility-status">Started</strong>
+			  {% endif %}
 				<br />
 				<p style="margin-top: 10px;">
 					Provide the details of people who you'd like copied into communications about this case.
 				</p>
             </li>
+			<!-- 2. SPEND DETAILS AND APPROVALS -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="request-spend-details-approvals" aria-describedby="read-declaration-status" class="govuk-link--no-visited-state">
                   Spend details and approvals
                 </a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Not started</strong>
+				{% if data['delivery-stage'] === undefined %}
+				<strong class="govuk-tag app-task-list__tag govuk-tag--blue">Not started</strong>
+				{% else %}
+				<strong class="govuk-tag app-task-list__tag govuk-tag--yellow" id="eligibility-status">Started</strong>
+				{% endif %}
 				<br />
 				<p style="margin-top: 10px;">
 					Provide details of this spend, including the stage of delivery and any existing approvals.
 				</p>
             </li>
+			<!-- 3. ABOUT THE PROJECT -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="request-digital-tech-about-project" aria-describedby="read-declaration-status" class="govuk-link--no-visited-state">
                   About the project
                 </a>
 				</span>
-				<strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Not started</strong>
+				{% if data['digital-tech-digital-or-tech'] === undefined %}
+				<strong class="govuk-tag app-task-list__tag govuk-tag--blue">Not started</strong>
+				{% else %}
+				<strong class="govuk-tag app-task-list__tag  govuk-tag--yellow" id="eligibility-status">Started</strong>
+				{% endif %}
 				<br />
 				<p style="margin-top: 10px;">
 					Provide more information about the background and aims of this project.
 				</p>
             </li>
+			<!-- 4. COST BREAKDOWN -->
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="digital-tech-cost-breakdown-1" aria-describedby="read-declaration-status" class="govuk-link--no-visited-state">
                   Cost breakdown
                 </a>
 				</span>
-				<strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Not started</strong>
+				{% if data['costs'].length === 0 or data['costs'] === undefined %}
+				<strong class="govuk-tag app-task-list__tag govuk-tag--blue">Not started</strong>
+				{% else %}
+				<strong class="govuk-tag app-task-list__tag  govuk-tag--yellow" id="eligibility-status">Started</strong>
+				{% endif %}
 				<br />
 				<p style="margin-top: 10px;">
 					Provide the financial details of the proposed spend, including proposed benefits.
 				</p>
             </li>
+			<!-- 5. TCoP -->
             <li class="app-task-list__item">
 				<span class="app-task-list__task-name">
 					<a href="digital-tech-code-practice" aria-describedby="read-declaration-status" class="govuk-link--no-visited-state">
 						Technology Code of Practice
 					</a>
 				</span>
-				<strong class="govuk-tag app-task-list__tag" id="read-declaration-status">Not started</strong>
+				{% if data['tech-cop-point-1'] === undefined %}
+				<strong class="govuk-tag app-task-list__tag govuk-tag--blue">Not started</strong>
+				{% else %}
+				<strong class="govuk-tag app-task-list__tag  govuk-tag--yellow" id="eligibility-status">Started</strong>
+				{% endif %}
 				<br />
 				<p style="margin-top: 10px;">
 					Provide evidence that your project is in line with the Technology Code of Practice (TCoP).
