@@ -28,10 +28,10 @@
                   Key contacts
                 </a>
               </span>
-			  {% if data['contacts'].length === 0 and data['contacts'] === undefined %}
-              <strong class="govuk-tag govuk-tag--blue">Not started</strong>
+			  {% if data['key_contacts'].length > 0 %}
+			  <strong class="govuk-tag app-task-list__tag govuk-tag--yellow" id="eligibility-status">Started</strong>
 			  {% else %}
-			  <strong class="govuk-tag app-task-list__tag  govuk-tag--yellow" id="eligibility-status">Started</strong>
+              <strong class="govuk-tag app-task-list__tag govuk-tag--blue">Not started</strong>
 			  {% endif %}
 				<br />
 				<p style="margin-top: 10px;">
