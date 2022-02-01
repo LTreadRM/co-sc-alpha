@@ -20,9 +20,9 @@ Example usage:
 module.exports = {
 
   // Insert values here
-  "full-name": "John Doe",
-  "role": "Digital and Technology Assurance Lead",
+  "full-name": "Cheryl K",
+  "role": "Portfolio analyst",
   "phone-number": "01234 567890",
-  "email": "john.doe@ministry.gov.uk"
+  "email": "cheryl.k@justice.gov.uk"
 
 }

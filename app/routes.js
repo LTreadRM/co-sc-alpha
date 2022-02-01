@@ -13,6 +13,7 @@ function initialiseVariables(req) {
 	req.session.data['conditions'] = []
 	req.session.save()
 	req.session.data['activeFlag'] = true
+	req.session.data['error'] = []
 
 	blob = []
 	blob.push('Digital and technology')
@@ -56,15 +57,71 @@ router.get('/v0-1/0-1-add-new-case', function(req, res) {
 })
 
 router.get('/v0-1/0-1-about-you', function(req, res) {
+	req.session.data['error'] = []
 	res.redirect('/v0-1/about-you')
 })
 
 router.get('/v0-1/sending-about_you', function(req, res) {
-	res.redirect('/v0-1/about-spend')
+	// Now, with error checking!
+	req.session.data['error'] = []
+	// Indicate the type of error
+	if (req.session.data['full-name'] === "") {
+		// No name given
+		req.session.data['error'].push('name')
+	}
+	if (req.session.data['role'] === "") {
+		// No role given
+		req.session.data['error'].push('role')
+	}
+	if (req.session.data['phone-number'] === "") {
+		// No telephone number given
+		req.session.data['error'].push('phone')
+	}
+	if (req.session.data['email'] === "") {
+		// No email given
+		req.session.data['error'].push('email')
+	}
+	if (req.session.data['error'].length > 0) {
+		res.redirect('/v0-1/about-you')
+	} else {
+		res.redirect('/v0-1/about-spend')
+	}
 })
 
 router.get('/v0-1/sending-about-spend', function(req, res) {
-	res.redirect('/v0-1/digital-tech-task-list')
+	// Now, with error checking!
+	req.session.data['error'] = []
+	// Indicate the type of error
+	if (req.session.data['spend-title'] === "") {
+		// No title given
+		req.session.data['error'].push('title')
+	}
+	if (req.session.data['spend-description'] === "") {
+		// No description
+		req.session.data['error'].push('description')
+	}
+	if (req.session.data['spend-type'] === undefined) {
+		// No type specified
+		req.session.data['error'].push('type')
+	}
+	if (req.session.data['commercial-assurance'] === undefined) {
+		// Commercial assurance not specified
+		req.session.data['error'].push('commercial')
+	}
+	if (req.session.data['expected-end-date-day'] === "" || req.session.data['expected-end-date-month'] === "" || req.session.data['expected-end-date-year'] === "") {
+		// No end date properly specified
+		req.session.data['error'].push('date')
+	}
+	if (req.session.data['received-necessary-approvals'] === undefined) {
+		// Necessary approvals not specified
+		req.session.data['error'].push('approvals')
+	}
+	if (req.session.data['error'].length > 0) {
+		res.redirect('/v0-1/about-spend')
+	} else {
+		res.redirect('/v0-1/digital-tech-task-list')
+	}
+	
 })
 
 router.get('/v0-1/request-key-contacts', function(req, res) {
@@ -155,6 +212,7 @@ router.get('/v0-1/sending-digital-tech-cost-breakdown-1', function(req, res) {
 	checkIfActive(req)
 	/* grab page variables into a single variable */
 	var blob = []
+	blob.push("Year")
 	blob.push(req.session.data['cost-year'])
 	blob.push(req.session.data['approved-spend-amount'])
 	blob.push(req.session.data['approved-spend-description'])
@@ -168,10 +226,12 @@ router.get('/v0-1/sending-digital-tech-cost-breakdown-1', function(req, res) {
 	blob.push(req.session.data['exit-costs-description'])
 	blob.push(req.session.data['value-requested-amount'])
 	blob.push(req.session.data['value-requested-description'])
-	var total = parseFloat(req.session.data['approved-spend-amount']) + parseFloat(req.session.data['tech-capital-amount'])
+	/* var total = parseFloat(req.session.data['approved-spend-amount']) + parseFloat(req.session.data['tech-capital-amount'])
 			+ parseFloat(req.session.data['tech-operational-amount']) + parseFloat(req.session.data['nontech-operational-amount']) + 
-			parseFloat(req.session.data['exit-costs-amount']) + parseFloat(req.session.data['value-requested-amount'])
-	blob.push(total)
+			parseFloat(req.session.data['exit-costs-amount']) + parseFloat(req.session.data['value-requested-amount']) 
+	blob.push(total) */
+	console.log(req.session.data['costs'])
+	console.log(blob)
 	/* add variables to appropriate initialised variable */
 	req.session.data['costs'].push(blob)
 	req.session.save()

@@ -43,6 +43,7 @@
 			<hr style="margin-top: 60px; margin-bottom: 60px;">
 			<!-- point 1 -->
 			<div class="govuk-form-group">
+				<a id="tcop-1"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						1. Define user needs
@@ -57,24 +58,41 @@
 						Read more about TCoP point 1 - Define user needs.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-1" name="tcop-1" type="checkbox" value="tcop-1"
+							data-aria-controls="digital-tech-TCOP-opt-1" {{ checked("tcop-1", "tcop-1") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-1">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-1">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-1" 
+											name="tech-cop-point-1" 
+											rows="5">{{ data['tech-cop-point-1'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-1">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-1" name="tcop-file-upload-1" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
 				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-1" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 2 -->
 			<div class="govuk-form-group">
+				<a id="tcop-2"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						2. Make things accessible and inclusive
@@ -88,24 +106,40 @@
 						Read more about TCoP point 2 - Make things accessible.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-2" name="tcop-2" type="checkbox" value="tcop-2"
+							data-aria-controls="digital-tech-TCOP-opt-2" {{ checked("tcop-2", "tcop-2") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-2">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-2">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-2" 
+											name="tech-cop-point-2" 
+											rows="5">{{ data['tech-cop-point-2'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-2">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-2" name="tcop-file-upload-2" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-2" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-2" name="file-upload-2" type="file">
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 3 -->
 			<div class="govuk-form-group">
+				<a id="tcop-3"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						3. Be open and use open source
@@ -119,24 +153,41 @@
 						Read more about TCoP point 3 - Be open and use open source.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-3" name="tcop-3" type="checkbox" value="tcop-3"
+							data-aria-controls="digital-tech-TCOP-opt-3" {{ checked("tcop-3", "tcop-3") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-3">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-3">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-3" 
+											name="tech-cop-point-3" 
+											rows="5">{{ data['tech-cop-point-3'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-3">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-3" name="tcop-file-upload-3" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-3" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-3" name="file-upload-3" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 4 -->
 			<div class="govuk-form-group">
+				<a id="tcop-4"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						4. Make use of open standards
@@ -151,24 +202,42 @@
 						Read more about TCoP point 4 - Make use of open standards.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-4" name="tcop-4" type="checkbox" value="tcop-4"
+							data-aria-controls="digital-tech-TCOP-opt-4" {{ checked("tcop-4", "tcop-4") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-4">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-4">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-4" 
+											name="tech-cop-point-4" 
+											rows="5">{{ data['tech-cop-point-4'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-4">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-4" name="tcop-file-upload-4" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-4" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-4" name="file-upload-4" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 5 -->
 			<div class="govuk-form-group">
+				<a id="tcop-5"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						5. Use cloud first
@@ -182,24 +251,42 @@
 						Read more about TCoP point 5 - Use cloud first.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-5" name="tcop-5" type="checkbox" value="tcop-5"
+							data-aria-controls="digital-tech-TCOP-opt-5" {{ checked("tcop-5", "tcop-5") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-5">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-5">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-5" 
+											name="tech-cop-point-5" 
+											rows="5">{{ data['tech-cop-point-5'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-5">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-5" name="tcop-file-upload-5" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-5" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-5" name="file-upload-5" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 6 -->
 			<div class="govuk-form-group">
+				<a id="tcop-6"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						6. Make things secure
@@ -213,24 +300,42 @@
 						Read more about TCoP point 6 - Make things secure.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-6" name="tcop-6" type="checkbox" value="tcop-6"
+							data-aria-controls="digital-tech-TCOP-opt-6" {{ checked("tcop-6", "tcop-6") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-6">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-6">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-6" 
+											name="tech-cop-point-6" 
+											rows="5">{{ data['tech-cop-point-6'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-6">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-6" name="tcop-file-upload-6" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-6" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-6" name="file-upload-6" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 7 -->
 			<div class="govuk-form-group">
+				<a id="tcop-7"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						7. Make privacy integral
@@ -244,24 +349,42 @@
 						Read more about TCoP point 7 - Make privacy integral.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-7" name="tcop-7" type="checkbox" value="tcop-7"
+							data-aria-controls="digital-tech-TCOP-opt-7" {{ checked("tcop-7", "tcop-7") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-7">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-7">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-7" 
+											name="tech-cop-point-7" 
+											rows="5">{{ data['tech-cop-point-7'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-7">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-7" name="tcop-file-upload-7" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-7" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-7" name="file-upload-7" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 8 -->
 			<div class="govuk-form-group">
+				<a id="tcop-8"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						8. Share, reuse and collaborate
@@ -276,24 +399,42 @@
 						Read more about TCoP point 8 - Share, reuse and collaborate.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-8" name="tcop-8" type="checkbox" value="tcop-8"
+							data-aria-controls="digital-tech-TCOP-opt-8" {{ checked("tcop-8", "tcop-8") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-8">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-8">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-8" 
+											name="tech-cop-point-8" 
+											rows="5">{{ data['tech-cop-point-8'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-8">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-8" name="tcop-file-upload-8" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-8" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-8" name="file-upload-8" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 9 -->
 			<div class="govuk-form-group">
+				<a id="tcop-9"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						9. Integrate and adapt technology
@@ -308,24 +449,42 @@
 						Read more about TCoP point 9 - Integrate and adapt technology.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-9" name="tcop-9" type="checkbox" value="tcop-9"
+							data-aria-controls="digital-tech-TCOP-opt-9" {{ checked("tcop-9", "tcop-9") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-9">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-9">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-9" 
+											name="tech-cop-point-9" 
+											rows="5">{{ data['tech-cop-point-9'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-9">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-9" name="tcop-file-upload-9" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-9" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-9" name="file-upload-9" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 10 -->
 			<div class="govuk-form-group">
+				<a id="tcop-10"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						10. Make better use of data
@@ -339,24 +498,42 @@
 						Read more about TCoP point 10 - Make better use of data.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-10" name="tcop-10" type="checkbox" value="tcop-10"
+							data-aria-controls="digital-tech-TCOP-opt-10"> {{ checked("tcop-10", "tcop-10") }}
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-10">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-10">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-10" 
+											name="tech-cop-point-10" 
+											rows="5">{{ data['tech-cop-point-10'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-10">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-10" name="tcop-file-upload-10" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-10" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-10" name="file-upload-10" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 11 -->
 			<div class="govuk-form-group">
+				<a id="tcop-11"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						11. Define your purchasing strategy
@@ -371,24 +548,42 @@
 						Read more about TCoP point 11 - Define your purchasing strategy.
 					</a>
 				</p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-11" name="tcop-11" type="checkbox" value="tcop-11"
+							data-aria-controls="digital-tech-TCOP-opt-11" {{ checked("tcop-11", "tcop-11") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-11">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-11">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-11" 
+											name="tech-cop-point-11" 
+											rows="5">{{ data['tech-cop-point-11'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-11">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-11" name="tcop-file-upload-11" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-11" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-11">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-11" name="file-upload-11" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 12 -->
 			<div class="govuk-form-group">
+				<a id="tcop-12"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						12. Make your technology sustainable
@@ -401,24 +596,43 @@
 					<a href="https://www.gov.uk/guidance/make-your-technology-sustainable" target="blank">
 						Read more about TCoP point 12 - Make your technology sustainable.
 					</a>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+				</p>
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-12" name="tcop-12" type="checkbox" value="tcop-12"
+							data-aria-controls="digital-tech-TCOP-opt-12" {{ checked("tcop-12", "tcop-12") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-12">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-12">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-12" 
+											name="tech-cop-point-12" 
+											rows="5">{{ data['tech-cop-point-12'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-12">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-12" name="tcop-file-upload-12" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-12" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-12" name="file-upload-12" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 
 			<!-- point 13 -->
 			<div class="govuk-form-group">
+				<a id="tcop-13"></a>
 				<legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
 					<h1 class="govuk-heading-m">
 						13. Meet the Service Standard
@@ -429,19 +643,40 @@
 					you will also need to meet the <a href="https://www.gov.uk/service-manual/service-standard"b target="blank">Service Standard</a>. 
 				</div>
 				<p>
-				<div id="hint" class="govuk-hint">
-					Describe how you have met this point
+					<div id="hint" class="govuk-hint">
+						Describe how you have met this point
+					</div>
+				</p>
+
+				<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+					<div class="govuk-checkboxes__item">
+						<input class="govuk-checkboxes__input" id="tcop-13" name="tcop-13" type="checkbox" value="tcop-13"
+							data-aria-controls="digital-tech-TCOP-opt-13" {{ checked("tcop-13", "tcop-13") }}>
+						<label class="govuk-label govuk-checkboxes__label" for="tcop-13">
+							Select if this criteria is relevant to your spend control
+						</label>
+					</div>
+					<!-- conditional item 1 -->
+					<div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="digital-tech-TCOP-opt-13">
+						<div class="govuk-form-group">
+							<div id="hint" class="govuk-hint">
+								Describe how you have met this point
+							</div>
+							
+							<div class="govuk-form-group">
+								<textarea class="govuk-textarea" id="tech-cop-point-13" 
+											name="tech-cop-point-13" 
+											rows="5">{{ data['tech-cop-point-13'] }}</textarea>
+							</div>
+							<label class="govuk-label" for="tcop-file-upload-13">
+								Upload a file
+							</label>
+							<input class="govuk-file-upload" id="tcop-file-upload-13" name="tcop-file-upload-13" type="file">
+						</div>
+					</div>
+					<!-- end of conditional -->
 				</div>
-				
-				<div class="govuk-form-group">
-					<textarea class="govuk-textarea" id="tech-cop-point-12" 
-								name="tech-cop-point-1" 
-								rows="5"></textarea>
-				</div>
-				<label class="govuk-label" for="file-upload-1">
-					Upload a file
-				</label>
-				<input class="govuk-file-upload" id="file-upload-12" name="file-upload-12" type="file">
+
 				<hr style="margin-top: 60px; margin-bottom: 60px;">
 			</div>
 

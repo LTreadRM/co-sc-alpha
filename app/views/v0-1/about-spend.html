@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
 {% include "includes/phase-banner.html" %}
-<a href="about-you" class="govuk-back-link">Back</a>
+<a href="0-1-about-you" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -14,6 +14,50 @@
 <!-- main -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+		<!-- Error goes here -->
+		{% if data['error'].length > 0 %} 
+		<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+			<h2 class="govuk-error-summary__title" id="error-summary-title">
+				There is a problem
+			</h2>
+			<div class="govuk-error-summary__body">
+				<ul class="govuk-list govuk-error-summary__list">
+					{% if 'title' in data['error'] %}
+					<li>
+						<a href="#core-title">Provide the title of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'description' in data['error'] %}
+					<li>
+						<a href="#core-description">Provide a description of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'type' in data['error'] %}
+					<li>
+						<a href="#core-type">Provide the type of this spend control</a>
+					</li>
+					{% endif %}
+					{% if 'commercial' in data['error'] %}
+					<li>
+						<a href="#core-commercial">Indicate whether this spend control requires Commercial assurance</a>
+					</li>
+					{% endif %}
+					{% if 'date' in data['error'] %}
+					<li>
+						<a href="#core-date">Give a proper expected end date</a>
+					</li>
+					{% endif %}
+					{% if 'approvals' in data['error'] %}
+					<li>
+						<a href="#core-approvals">Indicate whether this spend control has received all necessary approvals</a>
+					</li>
+					{% endif %}
+				</ul>
+			</div>
+		</div>
+		{% endif %}
+		<!-- Error finishes -->
 
 		<h1 class="govuk-heading-xl">
 			About the spend
@@ -29,25 +73,138 @@
 
 		<form action="sending-about-spend" method="send">
 
+			<!-- spend title -->
+			{% if 'title' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-title"></a>
 				<label class="govuk-label" for="spend-title">
 					Title of spend
 				</label>
 				<input class="govuk-input" id="spend-title" name="spend-title" type="text" value="{{ data['spend-title'] }}">
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="no-title-given-hint no-title-given-error">
+					<a id="core-title"></a>
+					<label class="govuk-label" for="spend-title">
+						Title of spend
+					</label>
+					<p id="no-title-given-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> Provide the title of this spend control
+					</p>
+					<input class="govuk-input govuk-input--error" id="spend-title" name="spend-title" type="text" value="{{ data['spend-title'] }}">
+				</div>
+			{% endif %}
 
+			<!-- spend descriptions -->
+			{% if 'description' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-description"></a>
 				<label class="govuk-label" for="role">
 					Description of spend
 				</label>
 				<textarea class="govuk-textarea" id="spend-description" name="spend-description" rows="5" aria-describedby="spend-description-hint">{{ data['spend-description'] }}</textarea>
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="no-title-given-hint no-title-given-error">
+					<a id="core-description"></a> 
+					<label class="govuk-label" for="spend-description">
+						Description of spend
+					</label>
+					<p id="no-description-given-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> Provide a description of this spend control
+					</p>
+					<textarea class="govuk-textarea" id="spend-description" name="spend-description" rows="5" aria-describedby="spend-description-hint">{{ data['spend-description'] }}</textarea>
+				</div>
+			{% endif %}
 
+			<!-- Spend control type -->
+			{% if 'type' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-type"></a>
+				<fieldset class="govuk-fieldset" aria-describedby="spend-type">
+					<h2 class="govuk-heading-m">
+						What area of spend are you applying in?
+					</h2>
+
+					<div class="govuk-checkboxes" data-module="govuk-checkboxes">
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Advertising" {{ checked("spend-type", "Advertising") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Advertising
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Commercial" {{ checked("spend-type", "Commercial") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Commercial
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Digital and technology" {{ checked("spend-type", "Digital and technology") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Digital and technology
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Consultancy" {{ checked("spend-type", "Consultancy") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Consultancy
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Property" {{ checked("spend-type", "Property") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Property
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Facilities" {{ checked("spend-type", "Facilities") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Facilities
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Redundancy" {{ checked("spend-type", "Redundancy") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Redundancy
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Recruitment" {{ checked("spend-type", "Recruitment") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Recruitment
+							</label>
+						</div>
+
+						<div class="govuk-checkboxes__item">
+							<input class="govuk-checkboxes__input" id="spend-type" name="spend-type" type="checkbox" value="Learning and development" {{ checked("spend-type", "Learning and development") }}>
+							<label class="govuk-label govuk-checkboxes__label" for="spend-type">
+								Learning and development
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<a id="core-type"></a>
 				<fieldset class="govuk-fieldset">
 					<h2 class="govuk-heading-m">
 						What area of spend are you applying in?
 					</h2>
+
+					<p id="where-do-you-live-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> Provide the type of this spend control
+					</p>
 
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
@@ -115,8 +272,12 @@
 					</div>
 				</fieldset>
 			</div>
+			{% endif %}
 
+			<!-- Commercial assurance required -->
+			{% if 'commercial' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-commercial"></a>
 				<fieldset class="govuk-fieldset">
 					<h2 class="govuk-heading-m">
 						Does the anticipated spend require commercial assurance?
@@ -128,14 +289,14 @@
 
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="yes" {{ checked("commercial-assurance", "yes") }}>
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="Yes" {{ checked("commercial-assurance", "Yes") }}>
 							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
 								Yes
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="no" {{ checked("commercial-assurance", "no") }}>
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="No" {{ checked("commercial-assurance", "No") }}>
 							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
 								No
 							</label>
@@ -143,8 +304,45 @@
 					</div>
 				</fieldset>
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<a id="core-commercial"></a>
+				<fieldset class="govuk-fieldset">
+					<h2 class="govuk-heading-m">
+						Does the anticipated spend require commercial assurance?
+					</h2>
+					<div id="expected-end-date-hint" class="govuk-hint">
+						If your commercial spend is over £10m, you would also need to apply for 
+						commercial spend assurance.
+					</div>
 
+					<p id="where-do-you-live-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> Indicate whether this spend control requires Commercial assurance
+					</p>
+
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="Yes" {{ checked("commercial-assurance", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
+								Yes
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="commercial-assurance" name="commercial-assurance" type="radio" value="No" {{ checked("commercial-assurance", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="commercial-assurance">
+								No
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			{% endif %}
+
+			<!-- Expected end date -->
+			{% if 'date' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-date"></a>
 				<fieldset class="govuk-fieldset" role="group" aria-describedby="expected-end-date-hint">
 					<h2 class="govuk-heading-m">
 						When is the expected end date?
@@ -180,8 +378,55 @@
 					</div>
 				</fieldset>
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<a id="core-date"></a>
+				<fieldset class="govuk-fieldset" role="group" aria-describedby="expected-end-date-hint">
+					<h2 class="govuk-heading-m">
+						When is the expected end date?
+					</h2>
+					<div id="expected-end-date-hint" class="govuk-hint">
+						For example, 27 3 2024
+					</div>
 
+					<p id="where-do-you-live-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> Give a proper expected end date
+					</p>
+
+					<div class="govuk-date-input" id="expected-end-date">
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="expected-end-date-day">
+									Day
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="expected-end-date-day" name="expected-end-date-day" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['expected-end-date-day']}}">
+							 </div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="expected-end-date-month">
+									Month
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input--error" id="expected-end-date-month" name="expected-end-date-month" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['expected-end-date-month']}}">
+							 </div>
+						</div>
+						<div class="govuk-date-input__item">
+							<div class="govuk-form-group">
+								<label class="govuk-label govuk-date-input__label" for="expected-end-date-year">
+									Year
+								</label>
+								<input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="expected-end-date-year" name="expected-end-date-year" type="text" pattern="[0-9]*" inputmode="numeric" value="{{ data['expected-end-date-year']}}">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</div>	
+			{% endif %}
+
+			<!-- Have necessary approvals been received -->
+			{% if 'approvals' not in data['error'] %}
 			<div class="govuk-form-group">
+				<a id="core-approvals"></a>
 				<fieldset class="govuk-fieldset">
 					<h2 class="govuk-heading-m">
 						Have you received all the necessary approvals from your organisation?
@@ -194,14 +439,14 @@
 
 					<div class="govuk-radios">
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="yes" {{ checked("received-necessary-approvals", "yes") }}>
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="Yes" {{ checked("received-necessary-approvals", "Yes") }}>
 							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
 								Yes
 							</label>
 						</div>
 
 						<div class="govuk-radios__item">
-							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="no" {{ checked("received-necessary-approvals", "no") }}>
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="No" {{ checked("received-necessary-approvals", "No") }}>
 							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
 								No
 							</label>
@@ -209,6 +454,41 @@
 					</div>
 				</fieldset>
 			</div>
+			{% else %}
+			<div class="govuk-form-group govuk-form-group--error">
+				<a id="core-approvals"></a>
+				<fieldset class="govuk-fieldset">
+					<h2 class="govuk-heading-m">
+						Have you received all the necessary approvals from your organisation?
+					</h2>
+					<div id="received-necessary-approvals-hint" class="govuk-hint">
+						Necessary approval may include internal governance processes and reviews. 
+						You may not have all approvals initially. You can update this at 
+						a later date.
+					</div>
+
+					<p id="received-necessary-approvals-error" class="govuk-error-message">
+						<span class="govuk-visually-hidden">Error:</span> Indicate whether this spend control has received all necessary approvals
+					</p>
+
+					<div class="govuk-radios">
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="Yes" {{ checked("received-necessary-approvals", "Yes") }}>
+							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
+								Yes
+							</label>
+						</div>
+
+						<div class="govuk-radios__item">
+							<input class="govuk-radios__input" id="received-necessary-approvals" name="received-necessary-approvals" type="radio" value="No" {{ checked("received-necessary-approvals", "No") }}>
+							<label class="govuk-label govuk-radios__label" for="received-necessary-approvals">
+								No
+							</label>
+						</div>
+					</div>
+				</fieldset>
+			</div>
+			{% endif %}
 
 			<div class="govuk-form-group" style="padding-top: 30px;">
 				<button class="govuk-button" data-module="govuk-button">
